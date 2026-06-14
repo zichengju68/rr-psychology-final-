@@ -1,0 +1,636 @@
+                                     Reopening Openness to Experience:
+
+                   A Network Analysis of Four Openness to Experience Inventories
+
+                                          Supplementary Information
+
+SI 1. Technical information about the TMFG algorithm (Massara et al., 2016)
+
+The TMFG algorithm starts from a clique of order 4 (K4 ) and adds nodes in the middle of a 3-
+clique (T2 move). At each step, the algorithm optimizes the sum of the weights of the edges. T2
+is applied to the vertex and face pair that leads to the maximum increase in weights.
+
+  TMFG Algorithm:
+  input :A dense n×n square matrix W with positive weights
+  output: A sparse matrix, P, a filtered version of W fulfilling the planarity
+  constraint
+  1. C1 ←Tetrahedron, {v1,v2,v3,v4}, with highest overall total weights; // Assign the four
+  triangular faces in C1 to the array T
+  2. T ← {{v1,v2,v3},{v1,v2,v4},{v1,v3,v4},{v2,v3,v4}}; // Put the p − 4 vertices not belonging to
+  C1 in the array V
+  3. V← v5,···,vp ; // Create an empty list of Separators
+
+  4.     S← ∅; // Assign the first tetrahedron to the list of cliques
+  5. C ← C1;
+  6. P ← W(C1,C1);
+  7. Calculate MaxGain for T and V as in Eq.(1) ;
+  8. Calculate BestVertex for T and V as in Eq. (2) ; // Insert p − 4 vertices via T2
+  9. while V is not empty do
+  10.    Find the ti ∈ T and vi ∈ V that achieve the maximum in MaxGain ;
+  11.    Insert vi into ti // this creates three new triangles ta, tb, tc
+  12.    V ← V \ vi ;
+  13.    T ← (T \{ti})∪{ta,tb,tc};
+  14.    Si ←{ti};
+  15.    S ← S ∪ Si;
+  16.     Ci ←{ti,ta,tb,tc};
+  17.     C ← C ∪ Ci;
+  18.    P ← P + W (Ci , Ci ) − W (Si , Si );
+  19.    Update MaxGain and BestVertex to reflect the changes in T and V ;
+  20.    end
+  21.    return P;
+The resulting TMFG network is a chordal graph. A sparse inverse covariance matrix J that can
+be associated to the TMFG in such a way that edges of the TMFG correspond to non-zero values
+of the sparse inverse. The joint probability distribution of n variables 𝑋1 , … 𝑋𝑛 is
+                                                                   𝑛
+                                               1
+                                𝑃(𝑋1 , … 𝑋𝑛 ) = exp(− ∑ 𝑋𝑖 𝐉𝑖,𝑗 𝑋𝑗 )
+                                               𝑍
+                                                                  𝑖=1
+
+with Z a normalization constant called partition function. The elements of the inverse covariance
+are associated with the 4-cliques (C) and the 3-cliques separators (S) of the TMFG and can be
+directly computed form the covariance (see Barfuss et al., 2016, Eqs.4 and 5):
+
+                       𝐉𝑖,𝑗 =       ∑           (Σ(𝐶)−1 )𝑖,𝑗 −       ∑           (Σ(𝑆)−1 )𝑖,𝑗
+                                𝐶 𝑠.𝑡.{𝑖,𝑗}∈𝐶                    𝑆 𝑠.𝑡.{𝑖,𝑗}∈𝐶
+
+Analogously with lasso method, J, is a sparse inverse covariance where non-zero entries
+correspond to conditionally depended couples of variables.
+SI 2. Openness to Experience Inventories with facet, network-identified facet, item, and gradation classification (C = core, I =
+
+         intermediate, P = peripheral), and description (sorted alphabetically by inventory and then network name).
+
+                                                           Network
+  Inventory    Inventory Facet    Walktrap Facet                     Gradation   Item
+                                                            Name
+                                  Self-Assessed
+  BFAS         Intellect                                   I10       P           I formulate ideas clearly
+                                  Intelligence
+                                  Self-Assessed
+  BFAS         Intellect                                   It1       C           I have difficulty understanding abstract ideas
+                                  Intelligence
+  BFAS         Intellect          Intellectual Interests   It2       C           I avoid philosophical discussions
+                                  Self-Assessed
+  BFAS         Intellect                                   It3       C           I avoid difficult reading material
+                                  Intelligence
+  BFAS         Intellect          Intellectual Curiosity   It4       C           I like to solve complex problems
+                                  Self-Assessed
+  BFAS         Intellect                                   It5       I           I am quick to understand things
+                                  Intelligence
+                                  Self-Assessed
+  BFAS         Intellect                                   It6       P           I can handle a lot of information
+                                  Intelligence
+                                  Self-Assessed
+  BFAS         Intellect                                   It7       P           I have a rich vocabulary
+                                  Intelligence
+                                  Self-Assessed
+  BFAS         Intellect                                   It8       P           I think quickly
+                                  Intelligence
+                                  Self-Assessed
+  BFAS         Intellect                                   It9       C           I learn things slowly
+                                  Intelligence
+  BFAS         Openness           Fantasy                  O10       I           I seldom daydream
+                                  Aesthetic
+  BFAS         Openness                                    Op1       C           I believe in the importance of art
+                                  Appreciation
+                                  Aesthetic
+  BFAS         Openness                                    Op2       I           I enjoy the beauty of nature
+                                  Appreciation
+  BFAS         Openness           Intellectual Curiosity   Op3       C           I love to reflect on things
+                                  Aesthetic
+  BFAS         Openness                                    Op4       C           I do not like poetry
+                                  Appreciation
+                                  Aesthetic
+  BFAS         Openness                                    Op5       I           I seldom notice the emotional aspects of paintings and pictures
+                                  Appreciation
+  BFAS         Openness           Imaginative              Op6       I           I need a creative outlet
+                             Aesthetic
+BFAS     Openness                                     Op7   C   I see beauty in things that others might not notice
+                             Appreciation
+                             Openness to
+BFAS     Openness                                     Op8   I   I get deeply immersed in music
+                             Emotions
+BFAS     Openness            Fantasy                  Op9   P   I seldom get lost in thought
+
+HEXACO   Creativity          Imaginative              Cr1   P   I would like a job that requires following a routine rather than being creative
+
+HEXACO   Creativity          Imaginative              Cr2   C   I would enjoy creating a work of art, such as a novel, a song, or a painting
+
+HEXACO   Creativity          Imaginative              Cr3   C   I don't think of myself as the artistic or creative type
+
+HEXACO   Creativity          Imaginative              Cr4   I   People have often told me that I have a good imagination
+         Aesthetic           Aesthetic
+HEXACO                                                HA1   C   I would be quite bored by a visit to an art gallery
+         Appreciation        Appreciation
+         Aesthetic           Aesthetic
+HEXACO                                                HA2   I   I wouldn't spend my time reading a book of poetry
+         Appreciation        Appreciation
+         Aesthetic           Aesthetic
+HEXACO                                                HA3   I   If I had the opportunity, I would like to attend a classical music concert
+         Appreciation        Appreciation
+         Aesthetic           Aesthetic
+HEXACO                                                HA4   P   Sometimes I like to just watch the wind as it blows through the trees
+         Appreciation        Appreciation
+HEXACO   Inquisitiveness     Intellectual Interests   Iq1   I   I'm interested in learning about the history and politics of other countries
+
+HEXACO   Inquisitiveness     Intellectual Interests   Iq2   P   I enjoy looking at maps of different places
+
+HEXACO   Inquisitiveness     Intellectual Interests   Iq3   C   I would be very bored by a book about the history of science and technology
+
+HEXACO   Inquisitiveness     Intellectual Interests   Iq4   C   I've never really enjoyed looking through an encyclopedia
+
+HEXACO   Unconventionality   Intellectual Interests   Uc1   I   I think that paying attention to radical ideas is a waste of time
+
+HEXACO   Unconventionality   Intellectual Interests   Uc2   C   I find it boring to discuss philosophy
+
+HEXACO   Unconventionality   Imaginative              Uc3   P   I think of myself as a somewhat eccentric person
+
+HEXACO   Unconventionality   Diversity                Uc4   P   I like people who have unconventional views
+
+NEO      Actions             Intellectual Curiosity   Ac1   P   learn/develop new hobbies
+
+NEO      Actions             Diversity                Ac2   P   variety/spice of life
+NEO   Actions    Diversity            Ac3   P   try foreign foods
+
+NEO   Actions    Variety-Seeking      Ac4   I   set in ways
+
+NEO   Actions    Variety-Seeking      Ac5   P   vacation to tried and true spot
+
+NEO   Actions    Variety-Seeking      Ac6   P   prefer time in familiar surroundings
+
+NEO   Actions    Variety-Seeking      Ac7   I   prefer old methods
+
+NEO   Actions    Variety-Seeking      Ac8   P   same route to go someplace
+
+NEO   Fantasy    Imaginative          Fa1   C   active imagination
+
+NEO   Fantasy    Imaginative          Fa2   I   active fantasy
+
+NEO   Fantasy    Imaginative          Fa3   I   letting a fantasy or daydream develop
+
+NEO   Fantasy    Fantasy              Fa4   I   don't waste time daydreaming
+
+NEO   Fantasy    Fantasy              Fa5   P   keep thoughts on realistic lines
+
+NEO   Fantasy    Fantasy              Fa6   P   difficulty letting my mind wander
+
+NEO   Fantasy    Fantasy              Fa7   P   concentrate on work rather than daydreams
+
+NEO   Fantasy    Fantasy              Fa8   P   rarely enjoy make believe
+
+NEO   Feelings   Non-traditionalism   Fe1   P   don't pay attention to feelings
+
+NEO   Feelings   Non-traditionalism   Fe2   I   don't notice feelings environments produce
+                 Openness to
+NEO   Feelings                        Fe3   I   wide range of Openness to Emotions
+                 Emotions
+                 Openness to
+NEO   Feelings                        Fe4   I   few strong Openness to Emotions
+                 Emotions
+                 Openness to
+NEO   Feelings                        Fe5   I   scents or places evoke strong moods
+                 Emotions
+                 Openness to
+NEO   Feelings                        Fe6   P   strong Openness to Emotions make life interesting
+                 Emotions
+                 Openness to
+NEO   Feelings                        Fe7   P   easy to empathize
+                 Emotions
+                   Openness to
+NEO   Feelings                              Fe8   P   feelings are important to me
+                   Emotions
+NEO   Ideas        Intellectual Interests   Id1   C   enjoy playing with abstract ideas
+
+NEO   Ideas        Intellectual Interests   Id2   C   philosophy is boring
+
+NEO   Ideas        Intellectual Interests   Id3   C   lose interest when talking about abstract/theoretical matters
+
+NEO   Ideas        Intellectual Curiosity   Id4   I   enjoy "mind twister" puzzles
+
+NEO   Ideas        Intellectual Curiosity   Id5   I   like solving problems/puzzles
+
+NEO   Ideas        Intellectual Curiosity   Id6   C   a lot of curiosity
+
+NEO   Ideas        Intellectual Curiosity   Id7   C   broad range of intellectual interests
+
+NEO   Ideas        Intellectual Interests   Id8   C   no interest in thinking about the human condition
+                   Aesthetic
+NEO   Aesthetics                            NA1   C   not interested in the arts
+                   Appreciation
+                   Aesthetic
+NEO   Aesthetics                            NA2   C   poetry does not effect me
+                   Appreciation
+                   Aesthetic
+NEO   Aesthetics                            NA3   C   get a chill from poetry or a work of art
+                   Appreciation
+                   Aesthetic
+NEO   Aesthetics                            NA4   I   ballet is boring
+                   Appreciation
+                   Aesthetic
+NEO   Aesthetics                            NA5   C   interested in patterns found in art and nature
+                   Appreciation
+                   Aesthetic
+NEO   Aesthetics                            NA6   P   enjoy poetry with feelings rather than images/story lines
+                   Appreciation
+                   Openness to
+NEO   Aesthetics                            NA7   I   get absorbed into music
+                   Emotions
+                   Openness to
+NEO   Aesthetics                            NA8   I   genres of music are fascinating to me
+                   Emotions
+NEO   Values       Non-traditionalism       Va1   P   religious authorities should make decisions on moral issues
+
+NEO   Values       Non-traditionalism       Va2   P   people should know what they're doing by 25
+
+NEO   Values       Non-traditionalism       Va3   C   controversial speakers will only confuse people
+
+NEO   Values       Diversity                Va4   I   law changes should reflect the needs of the changing world
+NEO          Values      Diversity                Va5   P   broad-minded of other's lifestyles
+
+NEO          Values      Diversity                Va6   P   right and wrong differ for people
+
+NEO          Values      Variety-Seeking          Va7   P   better to stick to principles than being open-minded
+
+NEO          Values      Non-traditionalism       Va8   I   honor traditional values
+
+Woo et al.   Curiosity   Intellectual Interests   Cu1   P   I have never really been interested in science
+
+Woo et al.   Curiosity   Intellectual Curiosity   Cu2   I   I like to analyze things instead of taking them at face value
+
+Woo et al.   Curiosity   Intellectual Curiosity   Cu3   I   I love to do experiments and see the results
+
+Woo et al.   Curiosity   Intellectual Curiosity   Cu4   C   I continually strive to uncover information about topics that are new to me
+
+Woo et al.   Curiosity   Intellectual Curiosity   Cu5   I   I try to learn something new every day
+
+Woo et al.   Curiosity   Non-traditionalism       Cu6   P   I don’t like trying new things and would rather stick with what I know
+
+Woo et al.   Curiosity   Non-traditionalism       Cu7   C   I have no interest in learning new information
+
+Woo et al.   Curiosity   Non-traditionalism       Cu8   I   I seldom seek new opportunities to extend my knowledge
+
+Woo et al.   Curiosity   Diversity                Cu9   P   In a quiz I like to know what the answers are if I get the questions wrong
+
+Woo et al.   Depth       Intellectual Interests   Dp1   C   Sometimes I avoid getting involved in philosophical discussions
+
+Woo et al.   Depth       Intellectual Interests   Dp2   I   I’m happiest when conversations are practical rather than philosophical
+
+Woo et al.   Depth       Intellectual Interests   Dp3   C   I am always interested in learning more about philosophy
+
+Woo et al.   Depth       Intellectual Curiosity   Dp4   I   I take the time to reflect on my own thoughts and actions
+                         Aesthetic
+Woo et al.   Depth                                Dp5   P   For me personal growth is more important than success
+                         Appreciation
+Woo et al.   Depth       Intellectual Curiosity   Dp6   I   For me, there is nothing better than taking the time to think deeply about something
+                         Aesthetic
+Woo et al.   Depth                                Dp7   P   I am fascinated by meditation and processes which encourage one to look inward
+                         Appreciation
+Woo et al.   Depth       Non-traditionalism       Dp8   C   I believe in-depth discussions are a complete waste of time
+Woo et al.   Depth          Intellectual Interests   Dp9   C   I regard philosophy as a disease of the idle
+             Intellectual   Self-Assessed
+Woo et al.                                           Ie1   C   Tasks that require a lot of thinking confuse me easily
+             Efficiency     Intelligence
+             Intellectual   Self-Assessed
+Woo et al.                                           Ie2   I   I am a slow learner
+             Efficiency     Intelligence
+             Intellectual   Self-Assessed
+Woo et al.                                           Ie3   P   I always have difficulty applying new concepts
+             Efficiency     Intelligence
+             Intellectual   Self-Assessed
+Woo et al.                                           Ie4   P   I often need people to explain things to me
+             Efficiency     Intelligence
+             Intellectual   Self-Assessed
+Woo et al.                                           Ie5   C   I am usually not very quick in my thinking but have strengths in other areas
+             Efficiency     Intelligence
+             Intellectual   Self-Assessed
+Woo et al.                                           Ie6   P   I have to read complex information several times before I fully understand it
+             Efficiency     Intelligence
+             Intellectual   Self-Assessed
+Woo et al.                                           Ie7   P   I need things explained to me only once
+             Efficiency     Intelligence
+             Intellectual   Self-Assessed
+Woo et al.                                           Ie8   C   I am very quick at processing information
+             Efficiency     Intelligence
+             Intellectual   Self-Assessed
+Woo et al.                                           Ie9   P   I grasp scientific theories easily
+             Efficiency     Intelligence
+                            Self-Assessed
+Woo et al.   Ingenuity                               Ig1   I   I'm hopeless with inventing new things
+                            Intelligence
+                            Self-Assessed
+Woo et al.   Ingenuity                               Ig2   P   I rarely take an idea and apply it in a new way
+                            Intelligence
+                            Self-Assessed
+Woo et al.   Ingenuity                               Ig3   C   I avoid situations where I might have to come up with something new
+                            Intelligence
+Woo et al.   Ingenuity      Imaginative              Ig4   I   Compared to other people I don’t think I am very creative
+
+Woo et al.   Ingenuity      Intellectual Curiosity   Ig5   P   I improvise if I don't have the right tool for a job
+
+Woo et al.   Ingenuity      Imaginative              Ig6   C   I like coming up with imaginative plans
+
+Woo et al.   Ingenuity      Imaginative              Ig7   C   I would rather have a job that involves creativity than one that doesn’t
+
+Woo et al.   Ingenuity      Imaginative              Ig8   I   I can develop inventive ideas of high quality
+
+Woo et al.   Ingenuity      Imaginative              Ig9   P   People come to me if they are stuck for fresh ideas
+
+Woo et al.   Tolerance      Intellectual Interests   To1   I   I like to hear different people's views on political issues
+  Woo et al.   Tolerance        Non-traditionalism   To2      C          I think it is rude when others speak in a language I can't understand
+
+  Woo et al.   Tolerance        Diversity            To3      I          I understand that people can have different attitudes toward certain things than I do
+
+  Woo et al.   Tolerance        Non-traditionalism   To4      I          Immigrants really irritate me
+
+  Woo et al.   Tolerance        Diversity            To5      I          Like most people, I am open to listening to what others have to say
+
+  Woo et al.   Tolerance        Diversity            To6      P          I enjoy experiencing the rituals associated with different religions
+
+  Woo et al.   Tolerance        Diversity            To7      I          I learn a great deal from people with differing beliefs
+
+  Woo et al.   Tolerance        Diversity            To8      C          I enjoy diversity in the community
+
+  Woo et al.   Tolerance        Variety-Seeking      To9      P          I prefer to visit countries where they speak my language
+                                Aesthetic
+  Woo et al.   Aesthetics                            WA1      I          I think viewing art is a waste of time
+                                Appreciation
+                                Aesthetic
+  Woo et al.   Aesthetics                            WA2      C          Art bores me
+                                Appreciation
+                                Aesthetic
+  Woo et al.   Aesthetics                            WA3      P          I don't find Classical Ballet interesting
+                                Appreciation
+                                Aesthetic
+  Woo et al.   Aesthetics                            WA4      I          I don't find literature especially interesting
+                                Appreciation
+                                Aesthetic
+  Woo et al.   Aesthetics                            WA5      C          I have a passion for art
+                                Appreciation
+                                Aesthetic
+  Woo et al.   Aesthetics                            WA6      C          I enjoy art exhibitions
+                                Appreciation
+                                Aesthetic
+  Woo et al.   Aesthetics                            WA7      C          I see the beauty in art when others do not
+                                Appreciation
+                                Aesthetic
+  Woo et al.   Aesthetics                            WA8      I          If I see artwork I like in a gallery, I will visit it more than once to fully appreciate it
+                                Appreciation
+                                Openness to
+  Woo et al.   Aesthetics                            WA9      C          I have been touched emotionally by a great musical performance
+                                Emotions
+Note. For the NEO, the items are reworded phrases that capture the sense of the item, not the exact items from the NEO-PI-3
+
+inventory.
+SI 3. Larger view of BFAS inventory conceptual coverage (top-left, Figure 2; see SI 1 for item descriptions)
+SI 4. Larger view of HEXACO-100 inventory conceptual coverage (top-right, Figure 2; see SI 1 for item descriptions)
+SI 5. Larger view of NEO-PI-3 inventory conceptual coverage (bottom-left, Figure 2; see SI 1 for item descriptions)
+SI 6. Larger view of Woo et al.’s (2014) Openness to Experience inventory conceptual coverage (bottom-right, Figure 2; see SI 1 for
+
+item descriptions)
+SI 7. MANOVA and Box’s M tests for analysis of group differences and equal covariances
+
+
+                                             MANOVA                                 Box’s M
+     Statistic           Pillai         F (df)        Pillai         F (df)           F (df)
+      Sample                       1                            2                       1
+    1 (n = 176)        —               —            —               —                  —
+    2 (n =108)        .650        1.95 (1, 282)     —               —                  —
+    3 (n = 518)       .675        8.34 (1, 692)    .614        5.62 (1, 624)      1.292 (9591)
+Note: MANOVA with all three samples, F(2, 799) = 4.43, Pillai = .960, p < .001. All p’s < .001***.
+SI 8. R code for all analyses in the manuscript
+
+###Reopening Openness to Experience:
+
+###A Network Analysis of Four Openness to Experience Inventories
+
+
+
+###install necessary packages
+
+devtools::install_github("AlexChristensen/NetworkToolbox")
+
+install.packages(qgraph)
+
+install.packages(igraph)
+
+
+
+###load packages
+
+library(NetworkToolbox)
+
+library(qgraph)
+
+library(igraph)
+
+
+
+###read in data
+
+data <- read.csv(file.choose(),header=TRUE,sep=",")
+
+
+
+###construct network
+
+tmfg <- TMFG(data)$A
+
+
+
+###perform walktrap community detection algorithm
+
+walktrap <- convert2igraph(tmfg)
+
+
+
+#check walktrap robustness
+
+rand<-.Random.seed
+
+walkcheck<-matrix(0,nrow=138,ncol=10)
+for(i in 1:10)
+
+{
+
+    set.seed(rand[i])
+
+    walkcheck[,i]<-walktrap.community(walktrap)$membership
+
+}
+
+
+
+set.seed(0)
+
+wc<-walktrap.community(walktrap)
+
+wc$membership
+
+max(wc$membership)
+
+
+
+###name communities
+
+for (i in 1:length(wc$membership))
+
+    if (wc$membership[i] == 1)
+
+    {wc$membership[i]<-c("Intellectual Curiosity")
+
+    }else if (wc$membership[i] == 2)
+
+    {wc$membership[i]<-c("Aesthetic Appreciation")
+
+    }else if (wc$membership[i] == 3)
+
+    {wc$membership[i]<-c("Self-Assessed Intelligence")
+
+    }else if (wc$membership[i] == 4)
+
+    {wc$membership[i]<-c("Openness to Emotions")
+
+    }else if (wc$membership[i] == 5)
+
+    {wc$membership[i]<-c("Intellectual Interests")
+
+    }else if (wc$membership[i] == 6)
+
+    {wc$membership[i]<-c("Imaginative")
+      }else if (wc$membership[i] == 7)
+
+      {wc$membership[i]<-c("Non-Traditionalism")
+
+      }else if (wc$membership[i] == 8)
+
+      {wc$membership[i]<-c("Diversity")
+
+      }else if (wc$membership[i] == 9)
+
+      {wc$membership[i]<-c("Variety-Seeking")
+
+      }else if (wc$membership[i] == 10)
+
+      {wc$membership[i]<-c("Fantasy")}
+
+
+
+###Full Network
+
+layout(matrix(c(1,1)))
+
+shapes<-
+
+c(rep("circle",48),rep("square",20),rep("diamond",16),rep("triangle",5
+
+4))
+
+plot.ega <- qgraph(tmfg, label.prop=1.5, layout = "spring", vsize =
+
+2.5, esize = 10, groups =
+
+as.factor(wc$membership),GLratio=1.5,shape=shapes,palette="ggplot2")
+
+
+
+####Layout the four Openness to Experience inventories
+
+layout(matrix(c(1,3,2,4),nrow=2))
+
+
+
+#BFAS Network
+
+BFAS<-as.factor(c(rep(NA,48),wc$membership[49:68]))
+
+plot.egab <- qgraph(tmfg, title = "BFAS", groups = BFAS, layout =
+
+"spring", vsize = 4, esize =
+
+10,GLratio=1.5,labels=FALSE,shape=shapes,palette="ggplot2")
+#HEXACO Network
+
+HEX<-as.factor(c(rep(NA,68),wc$membership[69:84]))
+
+plot.egah <- qgraph(tmfg, title = "HEXACO-100", groups = HEX, layout =
+
+"spring", vsize = 4, esize =
+
+10,GLratio=1.5,labels=FALSE,shape=shapes,palette="ggplot2")
+
+
+
+#NEO Network
+
+NEO<-as.factor(wc$membership[1:48])
+
+plot.egan <- qgraph(tmfg, title = "NEO-PI-3", groups = NEO, layout =
+
+"spring", vsize = 4, esize =
+
+10,GLratio=1.5,labels=FALSE,shape=shapes,palette="ggplot2")
+
+
+
+#Woo Network
+
+WOO<-as.factor(c(rep(NA,84),wc$membership[85:138]))
+
+plot.egaw <- qgraph(tmfg, title = "Woo et al. (2014)", groups = WOO,
+
+layout = "spring", vsize = 4, esize = 10,
+
+GLratio=1.5,labels=FALSE,shape=shapes,palette="ggplot2")
+
+
+
+
+#Supplementary
+
+#BFAS Network
+
+layout(matrix(c(1,1)))
+
+BFAS<-as.factor(c(rep(NA,48),wc$membership[49:68]))
+
+plot.egab <- qgraph(tmfg, title="BFAS",label.prop=1.5,groups = BFAS,
+
+layout = "spring", vsize = 2.5, esize =
+10,GLratio=1.5,shape=shapes,palette="ggplot2")
+
+
+
+#HEXACO Network
+
+HEX<-as.factor(c(rep(NA,68),wc$membership[69:84]))
+
+plot.egah <- qgraph(tmfg, title="HEXACO-100",label.prop=1.5,groups =
+
+HEX, layout = "spring", vsize = 2.5, esize =
+
+10,GLratio=1.5,shape=shapes,palette="ggplot2")
+
+
+
+#NEO Network
+
+NEO<-as.factor(wc$membership[1:48])
+
+plot.egan <- qgraph(tmfg, title="NEO-PI-3",label.prop=1.5,groups =
+
+NEO, layout = "spring", vsize = 2.5, esize =
+
+10,GLratio=1.5,shape=shapes,palette="ggplot2")
+
+
+
+#Woo Network
+
+WOO<-as.factor(c(rep(NA,84),wc$membership[85:138]))
+
+plot.egaw <- qgraph(tmfg, title="Woo et al.
+
+(2014)",label.prop=1.5,groups = WOO, layout = "spring", vsize = 2.5,
+
+esize = 10, GLratio=1.5,shape=shapes,palette="ggplot2")
+

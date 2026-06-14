@@ -1,0 +1,122 @@
+==================================================================
+  原生 8 社区分支 · 网络分析复现
+  运行时间: 2026-06-06 19:22:34 
+==================================================================
+
+包版本: NetworkToolbox 1.4.4 | qgraph 1.9.8 | igraph 2.3.2 
+
+网络数据维度 (应 802 x 138): 802 x 138 
+10 种子稳健性（10 次结果是否完全一致）: TRUE 
+社区数 max(membership) = 8 （检查点：应为 8）
+8 社区模块度 modularity = 0.7221 （应≈0.722）
+
+table(wc$membership) —— 8 社区各题数:
+
+ 1  2  3  4  5  6  7  8 
+20 31 20 24 15 10 12  6 
+
+--- 8 社区 × 论文10 facet 交叉表（确认 10 嵌套于 8 的关系）---
+     论文facet
+社区8 Aesthetic Appreciation Diversity Fantasy Imaginative
+    1                      0         0       6          14
+    2                      0         0       0           0
+    3                      0         0       0           0
+    4                     24         0       0           0
+    5                      0        15       0           0
+    6                      0         0       0           0
+    7                      0         0       0           0
+    8                      0         0       0           0
+     论文facet
+社区8 Intellectual Curiosity Intellectual Interests Non-Traditionalism
+    1                      0                      0                  0
+    2                      0                     20                 11
+    3                      0                      0                  0
+    4                      0                      0                  0
+    5                      0                      0                  0
+    6                      0                      0                  0
+    7                     12                      0                  0
+    8                      0                      0                  0
+     论文facet
+社区8 Openness to Emotions Self-Assessed Intelligence Variety-Seeking
+    1                    0                          0               0
+    2                    0                          0               0
+    3                    0                         20               0
+    4                    0                          0               0
+    5                    0                          0               0
+    6                   10                          0               0
+    7                    0                          0               0
+    8                    0                          0               6
+
+--- 8 社区逐题清单（题目代码，请对照论文 SI 2 的 Walktrap Facet 归属）---
+
+社区1  =  Fantasy + Imaginative   [Experiencing]   (n=20)
+   题目: Fa1, Fa5, Fa3, Fa6, Fa2, Fa7, Fa4, Op6, Op9, O10, Cr1, Cr2, Cr4, Cr3, Uc3, Ig4, Ig6, Ig7, Ig8, Ig9 
+
+社区2  =  Intellectual Interests + Non-Traditionalism   [Intellect + Open-Mindedness]   (n=31)
+   题目: Id1, Va1, Id2, Va2, Fe1, Id8, Fe2, Id3, Fa8, Va3, Va8, It2, Op5, Iq1, Iq2, Iq3, Iq4, Uc1, Uc2, To2, To1, Dp8, Dp9, Dp1, Dp2, Dp3, Cu6, Cu7, Cu1, Cu8, Cu4 
+
+社区3  =  Self-Assessed Intelligence   [Intellect]   (n=20)
+   题目: It5, It1, It6, It3, It7, It8, It9, I10, Ie1, Ie2, Ie3, Ie4, Ie5, Ie6, Ie7, Ie8, Ie9, Ig1, Ig2, Ig3 
+
+社区4  =  Aesthetic Appreciation   [Experiencing]   (n=24)
+   题目: NA1, NA2, NA3, NA4, NA5, NA6, Op1, Op2, Op4, Op7, HA1, HA2, HA3, HA4, Dp5, Dp7, WA1, WA2, WA3, WA4, WA5, WA6, WA7, WA8 
+
+社区5  =  Diversity   [Open-Mindedness]   (n=15)
+   题目: Ac2, Va4, Ac3, Va5, Va7, Ac1, Va6, To4, To3, To5, To6, To7, To8, Ig5, Cu9 
+
+社区6  =  Openness to Emotions   [Experiencing]   (n=10)
+   题目: Fe3, NA7, Fe4, Fe5, Fe6, NA8, Fe7, Fe8, Op8, WA9 
+
+社区7  =  Intellectual Curiosity   [Intellect]   (n=12)
+   题目: Id4, Id5, Id6, Id7, Op3, It4, Uc4, Dp4, Dp6, Cu2, Cu3, Cu5 
+
+社区8  =  Variety-Seeking   [Open-Mindedness]   (n=6)
+   题目: Ac4, Ac5, Ac6, Ac7, Ac8, To9 
+
+>>> 结论：10->8 的两处合并（即新版 walktrap 自动切浅所致）<<<
+   • Fantasy + Imaginative [Experiencing]  ← 同方面内合并
+   • Intellectual Interests + Non-Traditionalism [Intellect+Open-Mindedness]  ← 跨方面合并（更值得注意）
+
+--- 四套问卷覆盖了这 8 个社区中的哪几个 ---
+
+NEO 覆盖 7/8:
+   覆盖: Aesthetic Appreciation; Diversity; Fantasy + Imaginative; Intellectual Curiosity; Intellectual Interests + Non-Traditionalism; Openness to Emotions; Variety-Seeking 
+   缺失: Self-Assessed Intelligence 
+
+BFAS 覆盖 6/8:
+   覆盖: Aesthetic Appreciation; Fantasy + Imaginative; Intellectual Curiosity; Intellectual Interests + Non-Traditionalism; Openness to Emotions; Self-Assessed Intelligence 
+   缺失: Diversity; Variety-Seeking 
+
+HEXACO 覆盖 4/8:
+   覆盖: Aesthetic Appreciation; Fantasy + Imaginative; Intellectual Curiosity; Intellectual Interests + Non-Traditionalism 
+   缺失: Diversity; Openness to Emotions; Self-Assessed Intelligence; Variety-Seeking 
+
+Woo 覆盖 8/8:
+   覆盖: Aesthetic Appreciation; Diversity; Fantasy + Imaginative; Intellectual Curiosity; Intellectual Interests + Non-Traditionalism; Openness to Emotions; Self-Assessed Intelligence; Variety-Seeking 
+   缺失: （无，全覆盖 8/8） 
+
+[敏感性对照] 主版10社区 vs 本分支8社区：
+  NEO   : 10版 9/10(唯缺Self-Assessed) -> 8版 7/8(仍唯缺Self-Assessed) 结论不变
+  BFAS  : 10版 7/10(无Open-Mindedness) -> 8版 6/8 结论方向不变
+  HEXACO: 10版 4/10(最窄)             -> 8版 4/8(仍最窄) 结论不变
+  Woo   : 10版 9/10(唯缺Fantasy)      -> 8版 8/8(Fantasy已并入Imaginative,故全覆盖)
+  => 总体结论稳健：HEXACO 最窄、Woo 最广最均衡；'Woo缺Fantasy'因合并而消失（不矛盾,可解释）
+
+--- 模块度对比 ---
+  原生 8 社区 modularity = 0.7221
+  强切 10 社区 modularity = 0.7124
+  差值 = 0.0098（8 社区略高，故新版 walktrap 自动停在 8）
+null device 
+          1 
+
+已导出 Figure1_整体网络_8社区.png
+null device 
+          1 
+已导出 Figure2_四套问卷分图_8社区.png
+已导出 SI3_BFAS_8社区.png 
+已导出 SI4_HEXACO_8社区.png 
+已导出 SI5_NEO_8社区.png 
+已导出 SI6_Woo_8社区.png 
+
+========== 网络分析（8 社区分支）完成 ==========
+

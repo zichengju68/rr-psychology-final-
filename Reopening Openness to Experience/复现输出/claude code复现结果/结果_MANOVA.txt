@@ -1,0 +1,56 @@
+==================================================================
+  MANOVA 组间比较（与社区数无关，做法同主版）
+  运行时间: 2026-06-06 19:22:55 
+==================================================================
+
+重建 Group：
+
+  1   2   3 
+176 108 518 
+✔ Group 重建成功，与论文 SI 7 (176/108/518) 一致
+
+===== 三组整体 MANOVA (Pillai) =====
+           Df  Pillai approx F num Df den Df    Pr(>F)    
+Group       2 0.95956   4.4308    276   1326 < 2.2e-16 ***
+Residuals 799                                             
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+-- 1 vs 2 (Fall vs Spring) --
+           Df  Pillai approx F num Df den Df    Pr(>F)    
+Group       1 0.65002   1.9516    138    145 3.998e-05 ***
+Residuals 282                                             
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+-- 1 vs 3 (Fall vs Mturk) --
+           Df  Pillai approx F num Df den Df    Pr(>F)    
+Group       1 0.67469   8.3412    138    555 < 2.2e-16 ***
+Residuals 692                                             
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+-- 2 vs 3 (Spring vs Mturk) --
+           Df  Pillai approx F num Df den Df    Pr(>F)    
+Group       1 0.61424   5.6191    138    487 < 2.2e-16 ***
+Residuals 624                                             
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+===== Box's M (1 vs 3) =====
+
+	Box's M-test for Homogeneity of Covariance Matrices
+
+data:  d13[, dv]
+Chi-Sq (approx.) = 12891, df = 9591, p-value < 2.2e-16
+
+
+--- MANOVA 结果 vs 论文 SI 7 逐项对照 ---
+  三组整体 Pillai 复现=0.9596 靶子=0.960 (PE=0.05%) | F 复现=4.43 靶子=4.43 (PE=0.02%)  ✔命中
+  1 vs 2    Pillai 复现=0.6500 靶子=0.650 (PE=0.00%) | F 复现=1.95 靶子=1.95 (PE=0.08%)  ✔命中
+  1 vs 3    Pillai 复现=0.6747 靶子=0.675 (PE=0.05%) | F 复现=8.34 靶子=8.34 (PE=0.01%)  ✔命中
+  2 vs 3    Pillai 复现=0.6142 靶子=0.614 (PE=0.04%) | F 复现=5.62 靶子=5.62 (PE=0.02%)  ✔命中
+
+✔ 8 社区分支与主版 MANOVA 完全一致：证明推断段不依赖社区数（dv 固定为 138 题）。
+
+========== MANOVA 完成 ==========

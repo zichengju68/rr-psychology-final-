@@ -1,0 +1,2124 @@
+Running head: REOPENING OPENNESS TO EXPERIENCE                                                      1
+
+
+
+
+                               Reopening Openness to Experience:
+
+                A Network Analysis of Four Openness to Experience Inventories
+
+
+
+                 Alexander P. Christensen, Katherine N. Cotter, & Paul J. Silvia
+
+                           University of North Carolina at Greensboro
+
+
+
+
+                                           Author Note
+
+       Alexander P. Christensen, Katherine N. Cotter, and Paul J. Silvia, Department of
+
+Psychology, University of North Carolina at Greensboro
+
+       P.J.S. was supported by grant RFP-15-12 from the Imagination Institute
+
+(www.imagination-institute.org), funded by the John Templeton Foundation. The opinions
+
+expressed in this publication are those of the authors and do not necessarily reflect the view of
+
+the Imagination Institute or the John Templeton Foundation.
+
+       Acknowledgements: The authors did not preregister the study prior to data collection and
+
+analysis. All data, analytic methods, and study materials are available on the Open Science
+
+Framework for reproduction and replication purposes: osf.io/954a7/.
+
+       Correspondence should be addressed to Alexander P. Christensen at Department of
+
+Psychology, P. O. Box 26170, University of North Carolina at Greensboro, Greensboro, NC,
+
+27502-6170, USA; apchrist@uncg.edu.
+REOPENING OPENNESS TO EXPERIENCE                                                                     2
+
+
+                                             Abstract
+
+Openness to Experience is a complex trait whose taxonomic structure has been widely debated.
+
+Previous research has provided greater clarity of its lower-order structure by synthesizing facets
+
+across several scales related to Openness to Experience. In the present study, we take a finer-
+
+grained approach by investigating the item-level relations of four Openness to Experience
+
+inventories (Big Five Aspects Scale, HEXACO-100, NEO-PI-3, and Woo et al.’s Openness to
+
+Experience inventory), using a network science approach, which allowed items to form an
+
+emergent taxonomy of facets and aspects. Our results (N = 802) identified 10 distinct facets
+
+(Variety-Seeking, Aesthetic Appreciation, Intellectual Curiosity, Diversity, Openness to
+
+Emotions, Fantasy, Imaginative, Self-Assessed Intelligence, Intellectual Interests, and Non-
+
+Traditionalism) that largely replicate previous findings as well as 3 higher-order aspects: two that
+
+are commonly found in the literature (Intellect and Experiencing; i.e., Openness), and one novel
+
+aspect (Open-Mindedness). In addition, we demonstrate that each Openness to Experience
+
+inventory offers a unique conceptualization of the trait, and that some inventories provide
+
+broader coverage of the network space than others. Our findings establish a broader consensus of
+
+Openness to Experience at the aspect- and facet-level, which has important implications for
+
+researchers and the Openness to Experience inventories they use.
+
+       Keywords: openness to experience, network analysis, taxonomy, facets, aspects
+REOPENING OPENNESS TO EXPERIENCE                                                                      3
+
+
+                               Reopening Openness to Experience:
+
+                A Network Analysis of Four Openness to Experience Inventories
+
+       Openness to Experience is a broad and complex trait that has gone by many names over
+
+the years, such as Openness to Experience, Intellect, Culture, Imagination, and Creativity (Fiske,
+
+1949; Goldberg, 1981; Johnson, 1994; Norman, 1963; Saucier, 1992). Given the trait’s breadth
+
+and complexity, researchers have identified two aspects of Openness to Experience: Openness to
+
+Experience (for clarity, hereafter referred to as Experiencing, following Connelly et al., 2014b)
+
+from the questionnaire tradition (Costa & McCrae, 1992), and Intellect from the lexical tradition
+
+(Goldberg, 1981). The Experiencing aspect is characterized by an appreciation for aesthetics,
+
+openness to emotions and sensations, absorption in fantasy, and engagement with perceptual and
+
+sensory information (DeYoung et al., 2012). The Intellect aspect is characterized by
+
+intellectualism, enjoyment of philosophy, curiosity, and engagement with abstract and semantic
+
+information (DeYoung et al., 2012).
+
+       Beneath the Experiencing and Intellect aspects, however, are many lower-order facets of
+
+Openness to Experience. The measurement of these facets has been inconsistent, with some
+
+facets being measured in some inventories but not in others. As a result, this has led to variation
+
+in the coverage and conceptualization of the Openness to Experience construct. Despite research
+
+examining the content and number of facets (Connelly et al., 2014b; Woo et al., 2014), there has
+
+yet to be an empirical investigation into how the items of different inventories converge (or
+
+diverge) on the coverage and content of lower-order facets.
+
+       Therefore, in the present research, we sought to clarify how four commonly used
+
+Openness to Experience inventories conceptualize the construct. In addition, we wanted to
+
+clarify the number and content of the lower-order facets across these inventories. To do so, we
+REOPENING OPENNESS TO EXPERIENCE                                                                  4
+
+
+applied a computational network science approach to construct a network using the items from
+
+these four inventories. From this network, we used a community detection algorithm to identify
+
+communities (i.e., facets) in the network. These network-identified facets were then used to
+
+examine the conceptual coverage of each inventory—whether items of the inventory were
+
+represented in many or a few of the network-identified facets.
+
+                              Openness to Experience Taxonomy
+
+       Past debates about how the global Openness to Experience trait should be defined has
+
+subsided—traditional factor analysis approaches have identified both Experiencing and Intellect
+
+as aspects of the global trait (DeYoung, Quilty, & Peterson, 2007; Woo et al., 2014).
+
+Experiencing and Intellect are separate but related aspects of Openness to Experience, with
+
+differential relations to affective, behavioral, and cognitive outcomes (DeYoung et al., 2012,
+
+2014; Barford & Smillie, 2016). For example, Experiencing is positively related to creative
+
+achievement in the arts (Kaufman et al., 2016), implicit learning (Kaufman et al., 2010), and
+
+feeling mixed emotions (Barford & Smillie, 2016) while Intellect is positively related to creative
+
+achievement in the sciences (Kaufman et al., 2016), working memory (DeYoung et al., 2009),
+
+and fluid intelligence (DeYoung et al., 2012). As a result, these aspects have been generally
+
+agreed upon.
+
+       Beneath the Experiencing and Intellect aspects, however, the lower-order facet structure
+
+of Openness to Experience becomes less clear—depending upon which inventory is used, the
+
+number of facets included can range from four to nine (Connelly et al., 2014a). There appears to
+
+be some level of agreement on the importance of some facets (e.g., aestheticism, intellectualism)
+
+because they are featured in many inventories. Many facets, however, are unique to only one or
+
+two inventories (e.g., feelings, actions, curiosity). Additionally, some inventories seem to
+REOPENING OPENNESS TO EXPERIENCE                                                                     5
+
+
+provide good coverage of the facets in one aspect but have limited coverage of facets in the
+
+other. For instance, in Woo and colleagues’ (2014) factor analysis of seven Openness to
+
+Experience inventories, facets of the NEO-PI-R loaded onto the Experiencing aspect well but
+
+had relatively low loadings for the Intellect aspect. Thus, although several Openness to
+
+Experience inventories exist, it appears that they vary substantially in their coverage of the trait’s
+
+conceptual space.
+
+       The special section in the Journal of Personality Assessment sought to reach a broader
+
+consensus of this lower-order taxonomy (Connelly et al., 2014a). Connelly and colleagues
+
+(2014b) undertook the most comprehensive theoretical evaluation of Openness to Experience’s
+
+lower-order facets to date by theoretically sorting and meta-analyzing 85 Openness to
+
+Experience-related scales. They identified eleven facets that were theoretically and empirically
+
+related to Openness to Experience: Aestheticism, Autonomy, Fantasy, Innovation, Introspection,
+
+Nontraditional, Openness to Emotions, Openness to Sensations, Thrill-Seeking, Tolerance, and
+
+Variety-Seeking. Only four of these facets, however, were considered pure (i.e., not related to
+
+any other personality trait): Aestheticism, Openness to Sensations, Nontraditional, and
+
+Introspection. Based on Connelly et al.’s sort, these pure facets were placed within the
+
+Experiencing (Aestheticism and Openness to Sensations) and Intellect (Nontraditional and
+
+Introspection) aspects. The other seven facets aligned with Openness to Experience and other
+
+personality traits, so they were labeled as trait compounds. For example, Fantasy was positively
+
+associated with Openness to Experience and negatively with Conscientiousness while
+
+Innovation, Openness to Emotions, Thrill-Seeking, and Variety-Seeking were positively
+
+associated with Openness to Experience and Extraversion. In sum, their extensive analysis of
+
+Openness to Experience-related scales provides a general framework for defining which facets
+REOPENING OPENNESS TO EXPERIENCE                                                                       6
+
+
+are central to the construct.
+
+        In the same special section, Woo and colleagues (2014) empirically evaluated Openness
+
+to Experience’s lower-order structure by factor analyzing a multitude of Openness-related scales
+
+and assembling a comprehensive inventory. Prior to inventory construction, Woo et al. (2014)
+
+synthesized several taxonomic approaches to inventory development—questionnaire, lexical, and
+
+subject matter experts—to systematically organize their measurement model of Openness to
+
+Experience. They used an exploratory factor analysis on the existing facets of 36 Openness-
+
+related scales to uncover two aspects and six facets (Table 1). Subject matter experts reviewed
+
+the content (i.e., original facets and their items) of the factor analysis identified facets to generate
+
+conceptual definitions for these six facets. From these conceptual definitions, a shortened
+
+inventory was developed that produced a 54-item Openness to Experience inventory, which was
+
+then examined in cross-cultural samples (Woo et al., 2014). In drawing from other inventories,
+
+Woo et al. began to establish a more comprehensive lower-order facet structure of Openness to
+
+Experience.
+
+        Connelly et al.’s and Woo et al.’s works are the most extensive evaluations of Openness
+
+to Experience’s lower-order taxonomy to date. Undoubtedly, the strength of their assessments
+
+was the sheer number of facets that were investigated and synthesized. One limitation of this
+
+approach, however, is that the theoretical interpretations of each inventory’s facets were taken at
+
+face value. For example, Connelly and colleagues (2014b) sorted the theoretical definitions of
+
+each facet into a conceptual category. Similarly, Woo et al. (2014) used facets, rather than items,
+
+in their factor analyses and subject matter experts used facet descriptions to select items rather
+
+than letting the items develop the facets themselves. In this way, their assessments maintained
+
+the assumption that the items in each facet unequivocally represented their respective facet. This
+REOPENING OPENNESS TO EXPERIENCE                                                                    7
+
+
+assumption is practical because facets are designed and validated based on high internal
+
+consistency; however, the assumption ignores the underlying covariance between items from
+
+other facets that may form new, alternative facets. Thus, by examining the facet structure at the
+
+facet-level, the rich item-level relationships across all the inventories were obscured.
+
+       To examine the item-level relations between different Openness to Experience
+
+inventories, we used the network approach, which allows items to covary with one another and
+
+emergent facet categorizations to arise. The network approach can be similar to an exploratory
+
+factor analysis; however, it provides a graphical representation that allows a visual mapping of
+
+how items relate to one another. Therefore, the network approach can offer cleaner distinctions
+
+of item classification as opposed to deciphering component loadings, which often have
+
+complicated interpretations. Moreover, the graphical representation permits an illustration of
+
+each inventory’s conceptual coverage of the Openness to Experience construct by depicting
+
+where their items appear in relation to items of other inventories.
+
+                                Psychometric Network Analysis
+
+       Network analysis has become an increasingly popular approach to understand
+
+psychopathology and personality phenomena. The network approach treats personality traits as
+
+complex systems and items as interacting elements that form emergent properties such as facets
+
+and traits (Costantini et al., 2015, 2017; Cramer et al., 2012; Mõttus & Allerhand, in press). In
+
+our network, Openness to Experience items will be represented by nodes and their relationships
+
+(i.e., correlations between two items) will be represented by edges. From the network
+
+perspective, personality traits emerge from the relations that exist between variables (e.g., items;
+
+Cramer et al., 2012). Thus, personality variables are not exchangeable—what you measure
+
+matters. One item cannot be equally exchanged for another item because the content and
+REOPENING OPENNESS TO EXPERIENCE                                                                     8
+
+
+interpretation of each item is likely to mean different things. Thus, networks are what you put
+
+into them.
+
+       Consistent with this perspective, we suggest that Openness to Experience is measured
+
+differently depending upon which inventory is being used. Moreover, we adopt the view that
+
+personality items are valuable and informative in their own right—that is, they are differentially
+
+related to affective, behavioral, and cognitive outcomes (McCrae, 2015; Mõttus, 2016).
+
+Therefore, exchanging a facet or item for another could alter the conceptualization of the
+
+construct and its relations to other items, facets, and outcomes. In this way, the different items
+
+and facets in each inventory introduce inconsistencies in how Openness to Experience is
+
+conceptualized, and ultimately, these differences lead to variation in Openness to Experience’s
+
+relationships with outcomes. For example, the Intellect aspect of the Big Five Aspects Scales
+
+(BFAS) Openness to Experience inventory consistently shows moderately positive relations to
+
+working memory (DeYoung et al., 2009; Kaufman et al., 2010). Meanwhile, working memory
+
+has shown weak relations (both positive and negative) to the Ideas facet (associated with BFAS’s
+
+Intellect aspect) of the NEO Openness to Experience inventory (DeYoung et al., 2009; Smeekens
+
+et al., 2016). The network approach offers a way to clarify these conflicting findings by
+
+identifying conceptual similarities and differences between these inventories.
+
+                                Psychometric Network Filtering
+
+       One key way our network approach differs from previous practices is the way in which
+
+we filter the network. Network filtering is an important part of network analysis because it
+
+determines the connections and structure of the network. Filtering is necessary to remove
+
+spurious connections in the network (i.e., multiple comparisons problem), obtain a parsimonious
+
+model, and increase interpretability. In the psychological literature, the standard approach for
+REOPENING OPENNESS TO EXPERIENCE                                                                     9
+
+
+filtering networks has been the least absolute shrinkage and selection operator (lasso) approach
+
+(Epskamp & Fried, 2018; van Borkulo et al., 2014).
+
+       The lasso approach filters the network by penalizing the inverse covariance matrix, which
+
+displays information about the partial correlations between two variables given all other
+
+variables in the model (a value of zero between two variables signifies conditional
+
+independence). The penalizing term, called the hyperparameter, is used in the Extended
+
+Bayesian Information Criterion (EBIC; Chen & Chen, 2008), which is used to optimize model
+
+selection (Epskamp, 2016; Foygel & Drton, 2010). This penalty parameter shrinks coefficients in
+
+the inverse covariance matrix, with some going to zero, implying conditional independence (if
+
+variables are related, then they are uniquely related, controlling all for other variables) and
+
+creating a sparse model. Although the lasso approach is the current state-of-the-art, there are
+
+some limitations (Christensen et al., 2018). The direct penalization to the inverse covariance
+
+matrix, for example, isolates the unique covariation between variables but removes common
+
+covariance that is typically considered in latent variable and factor analysis models (but see
+
+Golino & Demetriou, 2017; Golino & Epskamp, 2017).
+
+       Instead of the lasso approach, we used the Information Filtering Networks (IFN; Barfuss
+
+et al., 2016; Christensen et al., 2018) approach, which applies a topological (structural) constraint
+
+on zero-order correlations. More specifically, the Triangulated Maximally Filtered Graph
+
+(TMFG; Massara et al., 2016) method of the IFN approach constrains the network to be planar
+
+(i.e., edges can be drawn so that no edges cross one another) and retains 3n – 6 edges (where n
+
+equals number of variables), which induces parsimony. In addition, the TMFG network embeds
+
+conditional independence within its structure (i.e., the inverse covariance matrix can be
+
+associated with the network structure; Barfuss et al., 2016), using zero-order correlations rather
+REOPENING OPENNESS TO EXPERIENCE                                                                   10
+
+
+than penalizing the inverse covariance matrix directly (Christensen et al., 2018). Thus, despite
+
+implying conditional independence, the zero-order correlations retain the common covariance
+
+between variables, making it feasible to detect hierarchical information while also reducing
+
+measurement error (Forbes et al., 2017).
+
+       Another advantage of the TMFG method is that it naturally develops a hierarchy in its
+
+construction. This is achieved by building the network from the bottom-up: The algorithm begins
+
+by connecting four nodes (i.e., items) together, which have the highest sum of correlations to all
+
+other nodes, forming a tetrahedron. Then, the algorithm iteratively identifies and adds a node that
+
+maximizes the sum of its connections to three of the nodes already included in the network. In
+
+this process, a nested hierarchy develops such that the smallest components of the network
+
+(cliques or sets of connected nodes) are the building blocks of larger components (communities
+
+or clusters of cliques), which constitute the network (Song et al., 2011; 2012). Thus, there is an
+
+intrinsic hierarchy that is formed from the local connections (between items) to the global
+
+structure (the network itself). This feature of the TMFG method is particularly useful for
+
+examining personality constructs (Christensen et al., 2018). In short, the TMFG method is a good
+
+approach for determining the taxonomic structure of personality traits such as Openness to
+
+Experience.
+
+              Identifying the Hierarchical Structure of Openness to Experience
+
+       There are several methods that can identify hierarchical structure in networks. Perhaps
+
+the most common method is community detection, which identifies how many communities the
+
+network can be broken into (for a review, see Fortunato, 2010). In our case, the network’s
+
+communities are conceptually equivalent to facets; larger collections of communities, in turn, are
+
+equivalent to aspects (e.g., Experiencing and Intellect; Epskamp, Rhemtulla, & Borsboom, 2016;
+REOPENING OPENNESS TO EXPERIENCE                                                                 11
+
+
+Golino & Epskamp, 2017). The current state-of-the-art in psychometric networks is Exploratory
+
+Graph Analysis (EGA; Golino & Epskamp, 2017) via the walktrap algorithm (Pons & Latapy,
+
+2006). The walktrap algorithm uses random walks—random searches through the network
+
+starting from each node across edges to other nodes—to detect community boundaries, which are
+
+defined by many, densely connected surrounding edges and few, sparsely connected remote
+
+edges.
+
+         There are distinct advantages of using the TMFG method combined with the walktrap
+
+algorithm over a more traditional approach like exploratory factor analysis (EFA). First, because
+
+the TMFG method inherently builds a hierarchical structure, the relations between the items form
+
+an emergent facet and factor structure from the data, without the direction of the researcher.
+
+Conversely, EFA (e.g., principal axis factoring) attempts to maximize the covariance of the first
+
+factor, followed by the second factor and so on, which potentially makes EFA less than ideal for
+
+determining lower-order structures (such as facets). Second, the selection of the number and
+
+content of communities (or facets) is relatively deterministic compared to EFA. The researcher
+
+does not have to decide—using scree plots, eigenvalues, or component loadings—on how to best
+
+categorize the data; instead, the walktrap algorithm determines the size and number of
+
+communities based on the structure and connections of the network. Despite the relatively
+
+deterministic approach, researchers should still be thorough and inspect the content of the output
+
+to ensure that the results fit with theoretical expectations.
+
+                                          Present Research
+
+         The present research aimed to characterize Openness to Experience’s lower-order facet
+
+structure via the application of network analysis. This was achieved by applying a network
+
+approach to the items of four Openness to Experience inventories—BFAS (DeYoung et al.,
+REOPENING OPENNESS TO EXPERIENCE                                                                    12
+
+
+2007), HEXACO-100 (Ashton & Lee, 2004; Lee & Ashton, in press), NEO-PI-3 (McCrae,
+
+Costa, & Martin, 2005), and Woo et al.’s (2014) Openness to Experience inventory. The goals of
+
+this network construction were twofold. First, we sought to identify facets of Openness to
+
+Experience using items from four different inventories (see Table 1). Second, we wanted to
+
+examine the network to determine the conceptual coverage of the four inventories.
+
+       Notably, our analyses were exploratory, so any a priori hypotheses on the nature and
+
+number of facets would be speculative. Based on previous theoretical and empirical findings
+
+discussed above, however, we expected to find two larger components (i.e., collections of
+
+communities) that could be easily identified as the Experiencing and Intellect aspects.
+
+Additionally, we expected several inventory-defined facets to appear (e.g., aestheticism,
+
+intellectualism, fantasy), but the degree to which new facets would emerge or the number of
+
+facets that would be consistent with previous facet definitions was left as an open question.
+
+                                             Method
+
+Participants
+
+       There were three samples used for this study. The first sample was collected during the
+
+Fall semester of 2015 at a university through the university’s psychology research pool. The total
+
+sample included 210 participants (58.5% Caucasian, 33.5% African American) who were
+
+primarily young adults (Mage = 18.95, SDage = 3.04, 76.1% female, 23.3% male).
+
+       The second sample was collected during the Spring semester of 2017 at a university. A
+
+total of 140 participants (54.6% Caucasian, 31.5% African American) were recruited using the
+
+university’s psychology research pool and via responding to a flyer recruiting arts majors for
+
+psychology research. This sample, who was primarily young adults (Mage = 19.86, SDage = 3.70,
+
+75.9% female), specifically oversampled students majoring in the arts (i.e., music, theatre, fine
+REOPENING OPENNESS TO EXPERIENCE                                                                  13
+
+
+arts) to increase the sample’s population of creative domains. If students majoring in the arts
+
+were not in a psychology course, then they were compensated $20 for their participation.
+
+       The third sample recruited 605 participants from Amazon Mechanical Turk (MTurk),
+
+who were compensated $1.75 for their time. This sample (82.4% Caucasian, 10.3% African
+
+American, 9.4% Asian American) had a broader age range (18 to 80 years old) and a more equal
+
+gender distribution than our college samples (Mage = 35.37, SDage = 11.22, 53.5% female, 45.7%
+
+male) The study was visible only to people who were native English speakers, over 18 years old,
+
+located in the United States, and had completed at least 100 MTurk human intelligence tasks
+
+with an approval rating no lower than 80%.
+
+       In total, 955 participants were recruited across the three samples—121 of these
+
+participants, however, were removed for having elevated scores on items intended to capture
+
+inattentive responding (see Maniaci & Rogge, 2014; McKibben & Silvia, 2016, 2017). Thirty-
+
+two participants were also removed from the analyses because the network analysis required
+
+complete cases. In summary, 802 participants were included in the data analysis.
+
+       Lab participants completed a paper consent form while MTurk participants completed an
+
+electronic version of the paper consent form via Qualtrics. Participants then completed
+
+demographics and the various Openness to Experience inventories. Items were randomized
+
+within inventories, and the inventory order was randomized. Psychology participants were
+
+compensated with research credits and the students majoring in the arts and MTurk participants
+
+were compensated with money. All studies were approved by the university’s Institutional
+
+Review Board.
+
+Materials
+
+       Openness to experience. People completed four different measures of Openness to
+REOPENING OPENNESS TO EXPERIENCE                                                                    14
+
+
+Experience: HEXACO-100, BFAS, NEO-PI-3, and Woo et al.’s Openness to Experience
+
+Inventory. All responses were on a 5-point Likert scale ranging from 1 (Strongly Disagree) to 5
+
+(Strongly Agree). Responses were reverse coded where applicable to provide a positive manifold.
+
+         The HEXACO-100 personality inventory’s scale of Openness to Experience has four
+
+facets—aesthetic appreciation, inquisitiveness, creativity, and unconventionality—with four
+
+items per facet (16 items total; Lee & Ashton, 2004, in press).
+
+         The BFAS (DeYoung et al., 2007) splits personality traits into two aspects: Openness
+
+(i.e., Experiencing), reflecting perceptual and aesthetic engagement (10 items), and Intellect,
+
+reflecting engagement in intellectual interests (10 items).
+
+         The NEO-PI-3 (McCrae, Costa, & Martin, 2005) Openness to Experience inventory has
+
+eight items per facet—ideas, values, fantasy, action, depth, and aesthetics—for a total of 48
+
+items.
+
+         Finally, Woo et al.’s (2014) Openness to Experience Inventory contains six facets:
+
+aesthetics, curiosity, depth, intellectual efficiency, and tolerance (9 items per facet). Overall, the
+
+Openness to Experience inventory has 54 items and the two aspects—Culture (i.e.,
+
+Experiencing) and Creative Intellect (i.e., Intellect)—have 27 items each.
+
+Network Construction
+
+         Network filtering. In this network, the nodes represent the individual items from the
+
+four Openness to Experience inventories and the edges are zero-order Pearson’s correlations
+
+between items. Pearson’s correlations were used to produce a correlation matrix that is most
+
+typical of what researchers use when conducting an EFA or confirmatory factor analysis (but see
+
+Epskamp & Fried, 2018 for further discussion of non-normal and ordinal data in network
+
+analysis). The TMFG method (Massara et al., 2016) was applied to construct a sub-network—a
+REOPENING OPENNESS TO EXPERIENCE                                                                   15
+
+
+smaller network within the full network—that captures the most relevant information between
+
+nodes that are embedded in the original network and minimizes spurious associations. The
+
+resulting sub-network is composed of 3- and 4-node cliques—a set of connected nodes (e.g., a
+
+triangle and tetrahedron, respectively)—and it retains a total of 3n – 6 edges from the original
+
+network (i.e., 408 edges).
+
+        The TMFG method begins by sorting all edge weights (i.e., the zero-order correlations) in
+
+descending order and adds the largest edge weight one by one, based on an iterative construction
+
+process of a topologically constrained network (i.e., planar—a network that can be drawn on a
+
+sphere without connections crossing each other). In this construction, the algorithm adds a node
+
+into 3-cliques, based on a “T2 move” (Massara et al., 2016). The T2 move inserts a node into any
+
+3-clique’s center where edges are added to it, forming a tetrahedron and keeping the network
+
+planar. When adding these nodes, the algorithm optimizes an objective function that ensures the
+
+added node has the maximum increase in the sum of the additional edge weights (see SI 1 and
+
+Massara et al., 2016 for more technical details). The TMFG-filtered association matrix was
+
+constructed using the NetworkToolbox package1 (Christensen, 2018) in R (R Core Team, 2017).
+
+Network Analysis
+
+        Community detection. After the TMFG method filtered the network, the walktrap
+
+algorithm via the igraph package (Csardi & Nepusz, 2006) in R was applied to the network to
+
+determine the size (i.e., number of items) and number of communities (i.e., facets). The walktrap
+
+algorithm begins with a random search from each node to surrounding nodes to satisfy a
+
+proportion of high internal edges to surrounding nodes (many, dense connections to surrounding
+
+nodes) compared to the proportion of edges between the node and more distant nodes (few,
+
+
+1
+ The most up-to-date version of the NetworkToolbox package can be retrieved from
+https://github.com/AlexChristensen/NetworkToolbox
+REOPENING OPENNESS TO EXPERIENCE                                                                  16
+
+
+distant connections to more remote nodes). The proportions provide a measure of similarity
+
+between each node and their surrounding nodes, which is then used to identify community
+
+membership. The approach is based on the concept that a node’s random walks will get
+
+“trapped” inside of the densely-connected communities the node belongs to (Pons & Latapy,
+
+2006). Because the algorithm uses random walks, we verified that the results were consistent by
+
+setting 10 random seeds in R, which controls the state of R’s random number generator. The
+
+community results did not change based on the random seeds.
+
+       Network visualization. The TMFG-filtered network was visualized using the qgraph
+
+package (Epskamp et al., 2012) in R. Notably, the depiction of the networks appears to
+
+contradict the property of planarity (a network that can be drawn on a sphere without
+
+connections crossing each other). Although depicted with edges crossing, planarity simply means
+
+that the network could be depicted in such a way that no edges cross. When drawn in this
+
+fashion, however, the figure appears unnecessarily large.
+
+       In addition, the distance between the nodes is related to. but not synonymous with, actual
+
+conceptual distance or strength of relation (Forbes et al., 2017). The layout is based on the
+
+Fruchterman and Reingold (1991) algorithm, which has been noted for its stochastic placement
+
+process (e.g., a different ordering of variables can dramatically alter the network’s visualization).
+
+Thus, caution must be taken when interpreting node proximities in the network. Finally, using
+
+the communities extracted from the walktrap algorithm, we added labels and colors to each
+
+network’s visualization.
+
+       Core items of openness to experience. To determine facet (i.e., community) labels and
+
+descriptions, items that were the most central to the Openness to Experience network were
+
+identified using a hybrid centrality measure. Centrality measures are network measures that
+REOPENING OPENNESS TO EXPERIENCE                                                                    17
+
+
+evaluate a node’s influence, based on position and connections, in the network. The hybrid
+
+centrality measure ranks nodes based on their values across multiple measures of centrality and
+
+allows for a singular, continuous measure of overall centrality (Christensen et al., 2018; Pozzi et
+
+al., 2013).
+
+        Nodes with high hybrid centrality values are more central in the network; nodes with low
+
+hybrid centrality values are more peripheral. Nodes were sorted in descending order of their
+
+hybrid centrality values. The top 46 nodes (one third of the nodes) were designated as core, the
+
+next 46 as intermediate, and the last 46 as peripheral. These breaks give an even distribution of
+
+item classification and have been shown to provide meaningful distinctions for relevant
+
+behavioral outcomes for other scales (Christensen et al., 2018). The hybrid centrality measure
+
+was computed using the NetworkToolbox package in R.
+
+Statistical Analyses
+
+        Facet reliability. Rasch reliability (Rr), the empirical estimate of marginal reliability, for
+
+each inventory-defined and network-identified facet were calculated using Winsteps (Linacre,
+
+2017). We used the Rasch rating scale model, which is a polytomous model for data with more
+
+                                                                       ∑(𝑀𝑒𝑎𝑠𝑢𝑟𝑒 𝑆𝑡𝑎𝑛𝑑𝑎𝑟𝑑 𝐸𝑟𝑟𝑜𝑟)2 / 𝑁
+than 2 categories (such as a Likert scale). Rr was calculated by 1 − 𝑉𝑎𝑟𝑖𝑎𝑛𝑐𝑒 𝑜𝑓 𝑂𝑏𝑠𝑒𝑟𝑣𝑒𝑑 𝑀𝑒𝑎𝑠𝑢𝑟𝑒𝑠 ,
+
+and has equivalent interpretations to Cronbach’s alpha (Cronbach, 1951). In this formula, the
+
+mean of the measure standard error (the numerator) is the model’s variance divided by the
+
+variance of the observed data, which is then subtracted by 1. Typically, a Rr is a more
+
+conservative measure (i.e., underestimation) of a scale’s reliability than Cronbach’s alpha
+
+because it represents the true lower-bound of reliability (Eckes, 2011).
+
+        Facet correlations. Prior to correlating the network-identified facets, the items for each
+
+network-identified facet were summed and averaged to provide a facet score for each person.
+REOPENING OPENNESS TO EXPERIENCE                                                                 18
+
+
+Pearson’s correlations were calculated for the network-identified facets and a global Openness to
+
+Experience variable (the average score of all Openness to Experience items). High correlations
+
+with the global Openness to Experience variable would suggest that those network-identified
+
+facets are more central to the global trait.
+
+        R code and data sharing. All R code to reproduce the analyses are included in the
+
+supplementary materials (SI 8). All data, cleaning procedures, analytic methods, and study
+
+materials are available on the Open Science Framework for reproduction and replication
+
+purposes: osf.io/954a7/.
+
+                                               Results
+
+Communities of the Openness to Experience Network
+
+        The walktrap community detection algorithm identified 10 distinct communities (Figure
+
+1), ranging from 7 to 25 items. Through visual inspection, these communities appeared to form
+
+two larger components (aspects). Inspection of the identified facets (i.e., communities), however,
+
+revealed three distinct aspects: Intellect (communities 1 – 3), Open-Mindedness (communities 4
+
+– 6), and Experiencing (7 – 10). The descriptions of each community’s core items and item
+
+composition were used to determine the labels and descriptions for each facet (Table 2). Note
+
+that the communities listed below are based on the visual orientation and organization of
+
+component relations, not necessarily the actual order that the walktrap algorithm produced.
+
+        Community 1. The first community (turquoise in Figure 1) was relatively central in the
+
+depiction of the network and included 17 items. The core items of this community reflected
+
+interests in discussing philosophy (e.g., “I avoid philosophical discussions”; reversed) and
+
+abstract ideas (e.g., “I have never really been interested in science”; reversed). This community
+
+was also the most central to the Intellect component. Thus, this community was labeled
+REOPENING OPENNESS TO EXPERIENCE                                                                     19
+
+
+“Intellectual Interests.”
+
+        Community 2. Extending to the bottom-right of the Intellectual Interests community was
+
+a slightly larger community (20 items) related to perceived intellectual ability (violet in Figure
+
+1). Core items in this community denoted quick thinking, fast processing, and an ability to
+
+understand difficult ideas. All items in this community emphasize, in one way or another, the
+
+person’s own assessment of their intellectual ability. This self-report of perceived intellectual
+
+ability aligns with notions of subjectively assessed intelligence and self-estimates of intelligence
+
+(Chamorro-Premuzic & Furnham, 2004). Therefore, this community was identified as “Self-
+
+Assessed Intelligence.”
+
+        Community 3. The last community of the Intellect component was located to the right of
+
+the Intellectual Interests community (sea green in Figure 1) and contained 14 items. This
+
+community was characterized by items related to reflection (e.g., “I love to reflect on things”),
+
+interests in solving complex problems (e.g., “I like to solve complex problems”), and learning
+
+new things (e.g., “I try to learn something new every day”). Based on these descriptions, we
+
+labelled the community, “Intellectual Curiosity.”
+
+        Community 4. The first community of the Open-Mindedness component branched to the
+
+left of the Intellectual Interests community (sky blue in Figure 1). The core items of this
+
+community described an openness towards beliefs, values, and culture that are different from
+
+one’s own (e.g., “I think it is rude when others speak in a language I can’t understand”;
+
+reversed). Overall, the 12 items of this community indicated a general sense of liberalism
+
+towards others and opinions, and thus the community was labeled “Non-Traditionalism.”
+
+        Community 5. Community 5 extended towards the bottom of the network from the Non-
+
+Traditionalism community (pink in Figure 1). This community had 7 items which were all
+REOPENING OPENNESS TO EXPERIENCE                                                                      20
+
+
+reverse coded. This community was slightly harder to define because no items were positively
+
+endorsed for people high in the trait. We settled on “Variety-Seeking” to be consistent with
+
+Connelly et al.’s (2014b) findings and because it summarized the opposite characteristics of the
+
+items’ content in community, which centered on conventional, orthodox, and routine behavioral
+
+characteristics. Notably, the facet label is the reverse of the items’ content; therefore, items in
+
+this facet should also be reversed (as they were in the original inventories). Nonetheless,
+
+reversing the items does not ensure that the indicators are the equivalent of their reverse content
+
+(van Sonderen et al., 2013). In addition, this facet may be an artifact of reverse wording rather
+
+than evidence for a meaningfully separable facet. Thus, careful consideration is necessary when
+
+interpreting this facet.
+
+        Community 6. Community 6 was to the left of the Non-Traditionalism community
+
+(orange in Figure 1). This 12-item community was largely related to variety-seeking in
+
+environments (e.g., “I enjoy a diverse community”), beliefs (e.g., “I learn a great deal from
+
+people with differing beliefs”), and experiences of life (e.g., “I understand that people can have
+
+different attitudes toward certain things than I do”). Items that were most central to this
+
+community chiefly reflected preference for variety in cultural experiences; thus, we labeled this
+
+community “Diversity.”
+
+        Community 7. The seventh community was the largest, containing 25 items and was
+
+located above the Intellectual Interests community (coral in Figure 1). This community was
+
+clearly represented by aesthetic interests and appreciation with core items such as, “I have a
+
+passion for art” and “I enjoy the beauty of nature,” and thus was labeled, “Aesthetic
+
+Appreciation.” Not surprisingly, this community was most centrally located in the Experiencing
+
+component.
+REOPENING OPENNESS TO EXPERIENCE                                                                 21
+
+
+       Community 8. The next community included 10 items and branched to the left of the
+
+Aesthetic Appreciation community (slate blue in Figure 1). This community was defined by
+
+immersion in emotions and music, with a single core item uniting these two descriptions, “I have
+
+been touched emotionally by a great musical performance.” Several studies have demonstrated
+
+that people high in Openness to Experience, specifically the Experiencing aspect, are more likely
+
+to experience complex and subtle emotions related to aesthetic experiences (including music)
+
+than people low in Openness to Experience (Cotter, Silvia, & Fayn, in press; McCrae, 2007;
+
+Silvia, Fayn, Nusbaum, & Beaty, 2015). For this reason, we labelled this component “Openness
+
+to Emotions,” with an emphasis on emotions related to aesthetic experiences (Table 2).
+
+       Community 9. Stemming to the right of the Aesthetic Appreciation community was a
+
+community of 14 items defined by creativity and imagination (green in Figure 1). Core items
+
+were related to having an active imagination and engagement in creativity. The flavor of this
+
+community was more related to creativity in the arts, such as “I would enjoy creating a work of
+
+art, such as a novel, a song, or a painting,” than the sciences. Moreover, the community included
+
+some indicators of active daydreaming such as, “letting a fantasy or daydream develop.”
+
+Therefore, this community was labeled, “Imaginative.”
+
+       Community 10. The last Experiencing community branched off to the right of the
+
+Imaginative community (7 items; olive in Figure 1). Unlike the active daydreaming indicators of
+
+the Imaginative community, this community emphasized passive daydreaming like “difficulty
+
+letting my mind wander (reversed).” Thus, this community was characterized by daydreaming
+
+and mind wandering, so we called it “Fantasy.”
+
+Reliabilities and Correlations
+
+       Rasch Reliabilities. Rasch reliabilities are presented for each inventory-defined facet
+REOPENING OPENNESS TO EXPERIENCE                                                                     22
+
+
+(Table 1) and each network-identified facet discussed above (Table 3). In general, most
+
+inventory-defined facets had acceptable reliability (Rr > .70), with the exception of HEXACO’s
+
+Aesthetic Appreciation and Unconventionality. The network-identified facets were all
+
+satisfactory (Rr’s from .75 to .92), which was somewhat expected because facets with a larger
+
+number of items tended to have larger reliabilities.
+
+       Network-identified facet correlations. There are a few network-identified facet
+
+correlations that are worth noting (Table 3). First, other than the central Experiencing, Intellect,
+
+and Open-Mindedness facets (Aesthetic Appreciation, Intellectual Interests, and Non-
+
+Traditionalism, respectively), the Intellectual Curiosity and Imaginative facets had the highest
+
+correlations with the global Openness to Experience variable. Their high correlations are
+
+consistent with their more central positions in the network. Another interesting pattern is the
+
+differential relations of the Imaginative and Fantasy facets to the other facets. For example, the
+
+Imaginative facet has much larger correlations with the Intellectual Curiosity, Aesthetic
+
+Appreciation, and Self-Assessed Intelligence facets than the Fantasy facet. This suggests that,
+
+despite being related (r = .50), they are conceptually distinct from one another. Similarly, the
+
+Diversity and Variety-Seeking facets have a relatively small correlation (r = .36) and have
+
+divergent relations with the Experiencing aspect’s facets, despite having similar relations to Non-
+
+Traditionalism (r = .50 and r = .53, respectively). Finally, the Variety-Seeking, Openness to
+
+Emotions, and Fantasy facets had relatively small correlations (r’s < .60) with the global
+
+Openness to Experience variable compared to the other facets, which might suggest they are
+
+more appropriate as compound traits or peripheral facets of Openness to Experience (Connelly et
+
+al., 2014b). In sum, each network-identified facet had distinct relations with other facets, which
+
+suggests that they are separate but related.
+REOPENING OPENNESS TO EXPERIENCE                                                                      23
+
+
+Conceptual Coverage
+
+       To examine the conceptual coverage of each Openness to Experience inventory, we
+
+depicted the network with only the items of the inventory of interest highlighted (Figure 2; see SI
+
+3 – 6 for individual inventories). The number of network-identified facets and the number of
+
+items in those facets were used to determine how well (or poorly) each inventory covered each
+
+network-identified facet and aspect of Openness to Experience.
+
+       BFAS. The BFAS had items in 7 of the 10 network-identified facets (see Figure 2; SI 3).
+
+The Openness aspect had 5 items in the Aesthetic Appreciation facet, 2 in the Fantasy facet, and
+
+1 item in both the Openness to Emotions and Imaginative facets. The Intellect aspect was
+
+primarily defined by the Self-Assessed Intelligence facet (8 items) with 1 item reflecting the
+
+Intellectual Interests facet. Both the BFAS Openness and Intellect aspects had 1 item in the
+
+Intellectual Curiosity facet. The BFAS inventory adequately covered the Experiencing aspect
+
+(items in all four Experiencing-related facets) while the Intellect aspect was relatively
+
+homogeneous (i.e., mainly Self-Assessed Intelligence). In summary, although the BFAS
+
+inventory had sufficient coverage of the Experiencing aspect, it had narrow coverage of the
+
+Intellect aspect and no coverage of the Open-Mindedness aspect.
+
+       HEXACO. The HEXACO-100 inventory had the narrowest coverage of the Openness to
+
+Experience network (items in only 4 of 10 facets; see Figure 2; SI 4). HEXACO’s
+
+Inquisitiveness, Aesthetic Appreciation, and Creativity facets were relatively homogeneous: all
+
+four items for each subscale were in the Intellectual Interests, Aesthetic Appreciation, and
+
+Imaginative facets of the network, respectively. In contrast, its Unconventionality facet was
+
+sparsely spread out in the network, with 2 items in the Intellectual Interests facet, 1 item in the
+
+Diversity facet, and 1 item in the Imaginative facet. Overall, the HEXACO-100 inventory had
+REOPENING OPENNESS TO EXPERIENCE                                                                   24
+
+
+adequate coverage of the network-identified Experiencing and Intellect aspects but little
+
+coverage of the Open-Mindedness aspect (1 item).
+
+       NEO-PI-3. The NEO-PI-3 had items in every network-identified facet except for the
+
+Self-Assessed Intelligence facet (see Figure 2; SI 5). The NEO-PI-3’s Feelings facet spanned
+
+both the Openness to Emotions (6 items) and Non-Traditionalism (2 items) facets. The
+
+inventory’s Aesthetics facet was primarily contained within the network’s Aesthetic
+
+Appreciation facet (6 items), with its remaining two items in the Openness to Emotions facet.
+
+The NEO-PI-3’s Actions facet was spread out in the network: most items fell within the
+
+network’s Variety-Seeking facet (5 items) with its remaining items falling into the Diversity (2
+
+items) and Intellectual Curiosity (1 item) facets. The inventory’s Values facet was also spread
+
+across the network, with 4 items in the Non-Traditionalism facet, 3 items in the Diversity facet,
+
+and 1 item in the Variety-Seeking facet. The Fantasy facet of NEO-PI-3 made up most of the
+
+items in the network-identified Fantasy facet (5 of 7 items) and had some items in the
+
+Imaginative (3 items) facet. Finally, NEO-PI-3’s Ideas facet was equally spread between the
+
+Intellectual Interests (4 items) and Intellectual Curiosity (4 items) facets. In terms of the
+
+coverage of the network-identified aspects, Experiencing and Open-Mindedness were evenly
+
+covered (with some of NEO-PI-3’s facets being the primary measurement of a few of the
+
+network-identified facets), while the Intellect aspect was adequately covered.
+
+       Woo et al.’s Inventory. Like the NEO-PI-3, Woo et al.’s inventory had items in every
+
+network-identified facet except one (Fantasy; see Figure 2; SI 6). Woo et al.’s Intellectual
+
+Efficiency facet only appeared in the Self-Assessed Intelligence facet (all 9 items). Similarly, the
+
+inventory’s Aesthetics facet had 8 of its 9 items in the Aesthetic Appreciation facet. The other
+
+Aesthetics item was the inventory’s lone representative in the Openness to Emotions facet. The
+REOPENING OPENNESS TO EXPERIENCE                                                                    25
+
+
+Tolerance facet of Woo et al.’s inventory was spread across four facets: Diversity (5 items),
+
+Non-Traditionalism (2 items), Variety-Seeking (1 item), and Intellectual Interests (1 item).
+
+Likewise, Woo et al.’s Curiosity facet appeared in four facets: Intellectual Curiosity (4 items),
+
+Non-Traditionalism (3 items), Diversity (1 item), and Intellectual Interests (1 item). The
+
+Ingenuity facet’s items were mainly found in the Imaginative facet (5 items), and the remaining
+
+items were in the Self-Assessed Intelligence (3 items) and Intellectual Curiosity (1 item) facets.
+
+Finally, the Depth facet had the most diverse coverage in four facets that spanned the three
+
+network-identified aspects: Intellectual Interests (4 items), Aesthetic Appreciation (2 items),
+
+Intellectual Curiosity (2 items), and Non-Traditionalism (1 item). In summary, Woo et al.’s
+
+Openness to Experience inventory had considerable coverage of all of the aspects.
+
+                                            Discussion
+
+       The present study investigated the taxonomic structure of Openness to Experience and
+
+the conceptual coverage of four commonly used Openness to Experience inventories by applying
+
+network analysis to all inventories’ items. Using the walktrap community detection algorithm,
+
+we found 10 facets—Variety-Seeking, Aesthetic Appreciation, Intellectual Curiosity, Diversity,
+
+Openness to Emotions, Fantasy, Imaginative, Self-Assessed Intelligence, Intellectual Interests,
+
+and Non-Traditionalism—that formed three higher-order aspects: two commonly found in the
+
+literature (Experiencing and Intellect) and one novel aspect (Open-Mindedness).
+
+       The correlational patterns of the 10 network-identified facets suggest that each facet is
+
+distinct and has dissociable relations, despite some having seemingly similar descriptions.
+
+Moreover, network-identified facets that were closer to the center of the network had higher
+
+correlations with a global Openness to Experience variable, suggesting that facets more central in
+
+the network are defining features of Openness to Experience. Finally, based on the network
+REOPENING OPENNESS TO EXPERIENCE                                                                   26
+
+
+representation, we were able to determine the conceptual coverage of each inventory. These
+
+findings provide researchers with a clearer picture of the construct that each inventory measures.
+
+Researchers should take these results into consideration when evaluating how Openness to
+
+Experience relates to affective, behavioral, and cognitive outcomes.
+
+Taxonomic Structure of Openness to Experience
+
+       The larger components of the network seemed to suggest that three aspects of Openness
+
+to Experience might better define the global trait than two. We labeled this third aspect Open-
+
+Mindedness because it was largely defined by a receptiveness towards others’ ideas, values,
+
+beliefs, lifestyles, and culture. Notably, this aspect was almost entirely defined by items from the
+
+two larger inventories (i.e., NEO-PI-3 and Woo et al.’s Openness to Experience Inventory),
+
+which highlights that they may have a broader conceptualization of Openness to Experience than
+
+the smaller inventories. In terms of Open-Mindedness’s position in the network, it was more
+
+peripherally located than the other two aspects. This suggests that Open-Mindedness might be a
+
+compound aspect with another trait (e.g., Agreeableness) rather than a pure Openness to
+
+Experience aspect. Future research is necessary to replicate this finding and to investigate the
+
+potential of Open-Mindedness as a compound aspect. Nonetheless, our results demonstrate that a
+
+third aspect of Openness to Experience might exist and is currently captured by popular
+
+inventories.
+
+       Below the three aspects, the network-identified facets were consistent with many of the
+
+previous categorizations provided by Connelly and colleagues (2014b). Many facets were
+
+identical in their label and description (Connelly et al.’s in parentheses): Aesthetic Appreciation
+
+(Aestheticism), Openness to Emotions (Openness to Emotions), Fantasy (Fantasy), Variety-
+
+Seeking (Variety-Seeking), Diversity (Tolerance) and Non-Traditionalism (Nontraditional). This
+REOPENING OPENNESS TO EXPERIENCE                                                                   27
+
+
+intersection is unsurprising considering that several inventories included in Connelly et al.’s
+
+theoretical sort were also used in the present study, yet it is notable given the very different
+
+analytic approaches that these studies used.
+
+       Some network-identified facets, like Intellectual Interests and Intellectual Curiosity, were
+
+harder to relate to Connelly et al.’s (2014b) categories. For example, the Intellectual Interests and
+
+Intellectual Curiosity facets appear to fall under their global Openness to Experience category,
+
+which was defined by an openness to ideas, complexity, and curiosity. This interpretation seems
+
+appropriate given that Intellectual Interests and Intellectual Curiosity had two of highest
+
+correlations with our global Openness to Experience variable. Our Imaginative facet, however,
+
+was much less clear and seemed to be a blend of their Innovation (is creative and inventive; likes
+
+to come up with new ideas) and Fantasy (has an overactive imagination) facets. Connelly et al.
+
+seemed to treat imagination and fantasy as synonymous in their description of their Fantasy
+
+facet. Our correlational findings, however, suggest that the Imaginative and Fantasy facets have
+
+different relations with other facets in the Openness to Experience network (e.g., Intellectual
+
+Curiosity, Aesthetic Appreciation, and Self-Assessed Intelligence facets). Finally, there were a
+
+few facets that did not overlap. For example, we found a Self-Assessed Intelligence facet while
+
+they did not, and Connelly et al. found a few facets that we did not (e.g., Openness to Sensations,
+
+Autonomy, and Thrill-Seeking). These differences are likely due to the different scales and
+
+inventories that were investigated in each study rather than differences in analytical approaches.
+
+       More importantly, the central facets—based on position and their correlations with the
+
+global Openness to Experience variables—of our network (Intellectual Interests, Aesthetic
+
+Appreciation, and Intellectual Curiosity) perfectly align with Connelly and colleagues’ (2014b)
+
+description of global Openness to Experience: wanting to think and understand problems, having
+REOPENING OPENNESS TO EXPERIENCE                                                                    28
+
+
+artistic or scientific interests, being introspective and curious. Moreover, the most central Open-
+
+Mindedness facet, Non-Traditionalism, fit with additional descriptors of Connelly et al.’s global
+
+Openness to Experience category (liberal and independent minded).
+
+       Interestingly, our most peripheral facets (Fantasy, Variety-Seeking, and Openness to
+
+Emotions) aligned with Connelly et al.’s Openness to Experience trait compounds. This seems to
+
+confirm their position as peripheral facets and that they are probably associated with other traits.
+
+Finally, the Diversity and Self-Assessed Intelligence facets were neither central nor peripheral
+
+but may also reflect trait compounds. Diversity, for instance, is likely related to Agreeableness
+
+while Self-Assessed Intelligence is likely related to Conscientiousness and psychometric
+
+intelligence (although the facet purely refers to self-reported intellectual ability; Chamorro-
+
+Premuzic et al., 2004).
+
+       In summary, our network largely reproduces Connelly and colleagues’ (2014b)
+
+theoretical sort. These results are encouraging because the lower-order facet structure seems to
+
+be appropriately measured when using all four inventories. In most research practices, however,
+
+it’s not practical to administer all four inventories. Time constraints and the redundancy of
+
+questions across inventories means that researchers should try to use inventories that are most
+
+appropriate for the outcomes they are measuring.
+
+Conceptual Coverage of Openness to Experience
+
+       Woo et al.’s (2014) Openness to Experience inventory had the broadest coverage of
+
+Openness to Experience. Notably, the inventory had the most items of the inventories considered
+
+in this study. In terms of the Intellect, Experiencing, and Open-Mindedness aspects, Woo et al.’s
+
+inventory appeared to be well balanced across all three. Our network revealed a notable
+
+difference in the categorization of one inventory-defined facet: Tolerance. In the original scale
+REOPENING OPENNESS TO EXPERIENCE                                                                   29
+
+
+design, the Tolerance facet was part of Woo et al.’s Culture (Experiencing) aspect. In contrast,
+
+our results reveal that the Tolerance facet strongly characterized the Open-Mindedness aspect.
+
+Although this facet could be consistent with both factors, Connelly et al.’s (2014b) meta-analytic
+
+correlations show that it’s more likely that it’s influenced by another trait (Agreeableness), which
+
+means it might be best conceptualized as a compound trait. In general, Woo et al.’s Openness to
+
+Experience inventory provides the most comprehensive coverage of the Openness to Experience
+
+construct.
+
+       The NEO-PI-3 also had a large number of items, many of which were in peripheral facets
+
+and sparsely spread out in the network. There were a few facets that were primarily described by
+
+the NEO-PI-3 compared to other inventories (Variety-Seeking, Openness to Emotions, and
+
+Fantasy). These facets were also the most peripheral in the network and had the lowest
+
+correlations with the global Openness to Experience variable. Thus, although there are many
+
+items in the NEO-PI-3, it seems that nearly half of them cover fringe characteristics of Openness
+
+to Experience. Indeed, these facets are likely to be considered compound traits (e.g., Variety-
+
+Seeking with Extraversion, Openness to Emotions with Extraversion and Neuroticism, and
+
+Fantasy with low Conscientiousness; Connelly et al., 2014b). In terms of the coverage of the
+
+Experiencing, Intellect, and Open-Mindedness aspects, the inventory seemed to favor
+
+Experiencing and Open-Mindedness, which is consistent with Connelly and colleagues’
+
+suggestion (2014b) and Woo et al.’s (2014) factor analytic findings. Indeed, the Self-Assessed
+
+Intelligence facet contained no NEO items, which should be considered when researchers are
+
+evaluating the NEO-PI-3 with cognitive outcomes—that is, it’s less likely to be related to
+
+cognitive outcomes compared to the other inventories.
+
+       For the smaller inventories, the HEXACO-100 inventory measured fewer facets (4 facets)
+REOPENING OPENNESS TO EXPERIENCE                                                                  30
+
+
+than the BFAS inventory (7 facets), suggesting that it covers a narrow spectrum of Openness to
+
+Experience. The HEXACO inventory mainly measured the central facets of Openness to
+
+Experience (Aesthetic Appreciation and Intellectual Interests). Interestingly, the
+
+Unconventionality facet of the HEXACO inventory had items in 3 different network-identified
+
+facets (Intellectual Interests, Diversity, and Imaginative), despite being composed of 4 items.
+
+This could explain why the Unconventionality facet had the lowest reliability across all
+
+Openness to Experience inventory-defined facets. In terms of aspect coverage, the HEXACO
+
+inventory was evenly distributed between the Experiencing and Intellect but had only one item in
+
+the Open-Mindedness aspect, suggesting limited coverage of the broader Openness to
+
+Experience construct.
+
+       Similarly, the items in the BFAS inventory were evenly distributed between the
+
+Experiencing and Intellect aspects but did not have any items in the Open-Mindedness aspect.
+
+Our network revealed that the BFAS’s Intellect aspect primarily covered the Self-Assessed
+
+Intelligence facet, which had the lowest correlations (r’s from .15 to .44) with the Experiencing
+
+aspect’s facets. This finding could explain why there tends to be only moderate correlations
+
+between its Openness and Intellect aspects (r’s usually between .30 and .40). Thus, we expect
+
+that the Experiencing and Intellect aspects in other inventories would have stronger relations.
+
+Furthermore, our results could account for why the NEO-PI-3 inventory has relatively weak
+
+(positive and negative) findings with working memory whereas the BFAS inventory finds
+
+consistent moderately positive associations (DeYoung et al., 2009; Kaufman et al., 2010;
+
+Smeekens et al., 2016). Because the NEO-PI-3 lacks coverage of the Self-Assessed Intelligence
+
+facet and BFAS Intellect is mainly Self-Assessed Intelligence, it’s likely that relationships with
+
+cognitive attributes will vary depending on which scale is used. In general, the BFAS covers
+REOPENING OPENNESS TO EXPERIENCE                                                                   31
+
+
+both the Experiencing and Intellect aspects but tends to favor the specific facets of Aesthetic
+
+Appreciation and Self-Assessed Intelligence, respectively.
+
+       In summary of the larger two inventories, researchers interested in measuring the most
+
+comprehensive coverage of Openness to Experience should consider using Woo et al.’s
+
+inventory. The NEO-PI-3, when contrasted to Woo et al.’s scale, appears to measure
+
+conceptually distinct regions of the Openness to Experience construct. This contrast seems to
+
+suggest that the Woo et al.’s inventory has the broadest coverage of the Openness to Experience
+
+network is not simply because it has the most items (the NEO-PI-3 has only 6 fewer items) but
+
+because it has a greater diversity of items that were also related to items in the other inventories
+
+included in our study. The smaller inventories covered the Experiencing and Intellect aspects
+
+adequately but neither covered the Open-Mindedness aspect. Moreover, the Intellect aspect of
+
+the BFAS seemed to strongly favor the Self-Assessed Intelligence facet while the HEXACO
+
+inventory only covered the Intellectual Interests facet. These findings suggest that researchers
+
+should take consideration in which inventories they use because it could affect how Openness to
+
+Experience relates to other outcomes.
+
+Limitations
+
+       Several possible limitations of this study warrant consideration. First, the data are suitable
+
+for a wide range of analytic methods, such as exploratory factor analysis and clustering methods.
+
+One important limitation is that no comparison was made between our network analysis and
+
+more traditional methods, so it is unclear if our network approach would produce notably
+
+different results than EFA or any other factor finding methods. Previous network analysis studies
+
+have evaluated the lasso approach’s ability to uncover factor structure via EGA (Golino &
+
+Demetriou, 2017; Golino & Epskamp, 2017). Golino and Epskamp (2017) demonstrate, in a
+REOPENING OPENNESS TO EXPERIENCE                                                                   32
+
+
+simulation study, that EGA performs at least as well as other factor finding approaches, such as
+
+Parallel Analysis and the Minimum Average Partial procedure. Therefore, future work should
+
+emulate their simulation studies to determine if the approach used in this study performs
+
+comparable or favorably compared to other more traditional methods.
+
+       Another important consideration is the detection and interpretation of communities.
+
+While the walktrap algorithm deterministically decides on the number and size (i.e., number of
+
+items) of the communities, the interpretation of the communities is ultimately up to the
+
+researcher (similar to EFA). The Fantasy and Imaginative facets, for example, were determined
+
+to be separable communities based on the algorithm, and we also interpreted these communities
+
+as separable. From a theoretical standpoint, however, a researcher might instead interpret these
+
+two communities as one facet. In addition, our aspects (Intellect, Experiencing, and Open-
+
+mindedness) were our interpretation of how the communities were clustered and were not
+
+derived from the algorithm at all. Therefore, researchers may ultimately disagree with our
+
+conclusions.
+
+       Another possible limitation is that different samples (college and MTurk participants)
+
+were pooled together. Post-hoc MANOVAs and Box’s M test revealed some significant
+
+differences in the means and covariances of the items (SI 7). Thus, although the diversity of
+
+participants beyond young college adults strengthens the generalizability of the findings to the
+
+larger population, there may be instances of differential item functioning that are obscured by
+
+pooling the samples in the network approach, which may influence the relations between items.
+
+Other network methods, such as the Fused Graphical Lasso (Costantini et al., 2017; Danaher et
+
+al., 2014) or the Ising model (Marsman et al., 2017; van Borkulo et al., 2014), might be able to
+
+extract such information. Future work, however, should examine the implications of pooling
+REOPENING OPENNESS TO EXPERIENCE                                                                                       33
+
+
+different samples and the effects this has on the pooled versus individual samples’ network
+
+structure.
+
+         In addition, sample size is likely to have a large effect on the reliability and estimates of
+
+parameters in the model (Epskamp, Borsboom, & Fried, 2017). In our study, for example, there
+
+were 9,453 possible parameters and 408 parameters in the network model. This means that,
+
+despite our sample of 802 people, there were just under 2 people per estimated parameter. Some
+
+of this could be ameliorated by including missing data (e.g., Full Information Maximum
+
+Likelihood), which was removed by our analyses. Even so, having a few more people would not
+
+change the fact that only having a few people per parameter renders any attempts of cross-
+
+validation, such as split-half sampling, unreliable. Moreover, this makes it relatively difficult to
+
+estimate the reliability of the community structures. Future developments should try to overcome
+
+the limitation of sample size by including missing data and harnessing bootstrapping (Epskamp
+
+et al., 2017; Golino & Demetriou, 2017) or permutation (van Borkulo et al., 2018) techniques.
+
+         In consideration of the sample size, some of the estimated relations between variables and
+
+variables inclusion in one facet rather than another may be unreliable.2 In the Intellectual
+
+Curiosity facet, for example, there is an item referring to “broad intellectual interests” that, in a
+
+larger sample, might be more likely to belong to the Intellectual Interests facet. Other than
+
+sample size, there could be other explanations for this result. One explanation could be that the
+
+Intellectual Curiosity facet is not specifically measured by any inventory included in the study.
+
+Therefore, if there were more items with content related to the Intellectual Curiosity facet, then
+
+the item (and others) may align more with the Intellectual Interests facet. Notably, this limitation
+
+
+2
+ In general, the reliability of network estimates is a critical concern in the developing field of psychological
+networks, and has stirred recent debate (see Borsboom et al., 2017; Forbes et al., 2017; Steinley et al., 2017). The
+approach used in this study was not discussed in the debate; however, recent research has compared the approach
+used in this study to the current state-of-the-art lasso (Christensen et al., 2018).
+REOPENING OPENNESS TO EXPERIENCE                                                                    34
+
+
+is not unique to this approach but also applies to EFA component loadings and clustering
+
+analysis. Thus, like EFA, researchers should use considerable caution when applying these
+
+methods and evaluate the results in light of theory and past research.
+
+Where Do We Go From Here?
+
+        Openness to Experience is a broad, complex trait that is difficult to pin down. As
+
+demonstrated by the present research, prominent personality inventories, while generally
+
+agreeing on the higher-order aspects of Experiencing and Intellect, inconsistently assess a variety
+
+of fine-grained facets. The most immediate implication of the present research is that researchers
+
+may not be measuring the Openness to Experience they believe they are measuring. Each
+
+inventory examined here demonstrated differential coverage of the trait and its two aspects.
+
+Moreover, we suggest a third aspect—Open-Mindedness—also exists in Openness to
+
+Experience’s taxonomy and should be considered in the development of future Openness to
+
+Experience inventories. Overall, this means that researchers should carefully consider their
+
+outcome measures and select the inventory or inventories that best assess the facets that are of
+
+greatest theoretical interest.
+
+        Future work should broaden the network to include more inventories of Openness to
+
+Experience to replicate our aspect and facet findings in the current network but also to determine
+
+whether any additional aspects or facets should be included. With this consideration, networks
+
+reflect of their inputs—that is, the network is constrained by what the researcher puts into it. Our
+
+network, for example, is limited to the elements within these inventories, and may not reflect all
+
+possible facets. Indeed, subject matter experts may disagree with some of the facets (e.g., Self-
+
+Assessed Intelligence), while others may disagree with how the content aligns within each facet
+
+(e.g., Intellectual Curiosity and Intellectual Interests). Adding additional inventories will
+REOPENING OPENNESS TO EXPERIENCE                                                                   35
+
+
+ultimately alter the structure of the network but may clarify, add, or reduce the number of facets
+
+identified in this study. Additional work that moves beyond pre-existing inventories may also aid
+
+in the formation of new developments and conceptualizations (DeYoung et al., 2012). For
+
+example, including outcome measures in the network—such as apophenia and intelligence, as
+
+DeYoung and colleagues (2012) have suggested—may further clarify the structure of lower-
+
+order facets. Costantini and Perugini (2016) have already embraced this approach by
+
+constructing a network of Conscientiousness and related outcome variables. Although they used
+
+only self-report measures, their findings have enhanced the understanding of the
+
+Conscientiousness trait continuum.
+
+       Another avenue would be to broaden the content of the items within the facets that are at
+
+the core of Openness to Experience (e.g., Intellectual Interest, Aesthetic Appreciation, Non-
+
+Traditionalism, Imaginative, and Intellectual Curiosity). In an inspection of the Intellectual
+
+Interests facet, for instance, there is a large redundancy of items related to philosophy. It’s
+
+obvious that Intellectual Interests should be much broader than philosophical interests and that
+
+the inventories investigated in this study severely limit the breadth of this facet. Mussel (2013),
+
+for instance, has already taken a step in this direction by developing a lower-order framework of
+
+BFAS’s Intellect that broke into a 2-dimensional structure (Seek and Conquer) with 3 operations
+
+(Think, Learn, and Create). Mussel’s framework develops a finer-grained view that provides
+
+meaningful differentiations within one aspect of Openness to Experience.
+
+       This approach echoes McCrae (2015), who suggests researchers should try to increase the
+
+breadth of facets rather than scale reliability. HEXACO’s Unconventionality facet may be the
+
+best example of this perspective. Although its reliability was relatively poor, it covered three
+
+different network-identified facets within the Openness to Experience network. Taking this idea
+REOPENING OPENNESS TO EXPERIENCE                                                                    36
+
+
+one step further, facets could be inventories in their own right. For example, the Imaginative
+
+facet could easily be a full-fledged inventory for the investigation of imagination. Another step
+
+in this direction would be to evaluate facets (rather than traits) with outcome variables, and
+
+remove items that have implied relations to the outcome within the item’s description (e.g., “I
+
+believe in the importance of art” in relation to the outcome of drawing as a hobby; Mõttus,
+
+2016). In this way, facets could be further refined by their relations to outcomes rather than their
+
+internal consistency.
+
+Conclusion
+
+       In summary, our study builds on previous work that examined the lower-order facet
+
+structure of Openness to Experience by constructing a network from items in four commonly
+
+used Openness to Experience inventories. Our results were in line with previous theoretical
+
+investigations of the lower-order facet structure of Openness to Experience. In addition, our
+
+network model suggests that an additional aspect of Open-Mindedness should be considered. We
+
+also show that each inventory covers different conceptual space of the Openness to Experience
+
+construct, with some covering narrow regions and others covering most of it. The choice of
+
+inventory will thus influence how Openness to Experience relates to outcome variables. The
+
+present findings can aid researchers seeking to select items and inventories, and to refine and
+
+develop additional assessment tools for Openness to Experience, a complex and intriguing trait.
+REOPENING OPENNESS TO EXPERIENCE                                                               37
+
+
+                                           References
+
+Barford, K. A., & Smillie, L. D. (2016). Openness and other Big Five traits in relation to
+
+       dispositional mixed emotions. Personality and Individual Differences, 102, 118-122.
+
+Barfuss, W., Massara, G. P., Di Matteo, T., & Aste, T. (2016). Parsimonious modeling with
+
+       information filtering networks. Physical Review E, 94(6), 062306.
+
+Chamorro‐Premuzic, T., & Furnham, A. (2004). A possible model for understanding the
+
+       personality‐intelligence interface. British Journal of Psychology, 95(2), 249-264.
+
+Christensen, A. P. (2018). NetworkToolbox: Methods and measures for brain, cognitive, and
+
+       psychometric network analysis. R package version 1.0.0. Available from
+
+       https://github.com/AlexChristensen/NetworkToolbox
+
+Christensen, A. P., Kenett, Y. N., Aste, T., Silvia, P. J., & Kwapil, T. R. (2018). Network
+
+       structure of the Wisconsin Schizotypy Scales-Short Forms: Examining psychometric
+
+       filtering approaches. Behavior Research Methods. doi: 10.3758/s13428-018-1032-9
+
+Chen, J., & Chen, Z. (2008). Extended Bayesian information criteria for model selection with
+
+       large model spaces. Biometrika, 95(3), 759-771.
+
+Connelly, B. S., Ones, D. S., & Chernyshenko, O. S. (2014a). Introducing the special section on
+
+       openness to experience: Review of openness taxonomies, measurement, and nomological
+
+       net. Journal of Personality Assessment, 96(1), 1-16.
+
+Connelly, B. S., Ones, D. S., Davies, S. E., & Birkland, A. (2014b). Opening up openness: A
+
+       theoretical sort following critical incidents methodology and a meta-analytic
+
+       investigation of the trait family measures. Journal of Personality Assessment, 96, 17-28.
+
+Costa, P. T., & McCrae, R. R. (1992). Four ways five factors are basic. Personality and
+
+       Individual Differences, 13(6), 653-665.
+REOPENING OPENNESS TO EXPERIENCE                                                                     38
+
+
+Costantini, G., Epskamp, S., Borsboom, D., Perugini, M., Mõttus, R., Waldorp, L. J., & Cramer,
+
+       A. O. J. (2015). State of the aRt personality research: A tutorial on network analysis of
+
+       personality data in R. Journal of Research in Personality, 54, 13-29.
+
+Costantini, G., & Perugini, M. (2016). The network of conscientiousness. Journal of Research in
+
+       Personality, 65, 68-88.
+
+Costantini, G., Richetin, J., Preti, E., Casini, E., Epskamp, S., & Perugini, M. (2017). Stability
+
+       and variability of personality networks: A tutorial on recent developments in network
+
+       psychometrics. Personality and Individual Differences.
+
+Cotter, K. N., Silvia, P. J., & Fayn, K. (in press). What does feeling like crying when listening to
+
+       music feel like? Psychology of Aesthetics, Creativity, and the Arts.
+
+Cramer, A. O., Sluis, S., Noordhof, A., Wichers, M., Geschwind, N., Aggen, S. H., ... &
+
+       Borsboom, D. (2012). Dimensions of normal personality as networks in search of
+
+       equilibrium: You can’t like parties if you don’t like people. European Journal of
+
+       Personality, 26(4), 414-431.
+
+Cronbach, L. J. (1951). Coefficient alpha and the internal structure of tests. Psychometrika,
+
+       16(3), 297-334.
+
+Csardi, G., & Nepusz, T. (2006). The igraph software package for complex network research.
+
+       InterJournal, Complex Systems, 1695(5), 1-9.
+
+DeYoung, C. G., Grazioplene, R. G., & Peterson, J. B. (2012). From madness to genius: The
+
+       Openness/Intellect trait domain as a paradoxical simplex. Journal of Research in
+
+       Personality, 46(1), 63-78.
+
+DeYoung, C. G., Shamosh, N. A., Green, A. E., Braver, T. S., & Gray, J. R. (2009). Intellect as
+
+       distinct from openness: Differences revealed by fMRI of working memory. Journal of
+REOPENING OPENNESS TO EXPERIENCE                                                                39
+
+
+       Personality and Social Psychology, 97(5), 883-892.
+
+DeYoung, C. G., Quilty, L. C., & Peterson, J. B. (2007). Between facets and domains: 10 aspects
+
+       of the Big Five. Journal of Personality and Social Psychology, 93(5), 880-896.
+
+DeYoung, C. G., Quilty, L. C., Peterson, J. B., & Gray, J. R. (2014). Openness to experience,
+
+       intellect, and cognitive ability. Journal of Personality Assessment, 96(1), 46-52.
+
+Eckes, T. (2011). Introduction to many-facet Rasch measurement: Analyzing and evaluating
+
+       rater-mediated assessments. Frankfurt am Main, Germany: Peter Lang.
+
+Epskamp S. 2016 Regularized Gaussian psychological networks: Brief report on the performance
+
+       of extended BIC model selection. arXiv preprint arXiv: 1606.05771.
+
+Epskamp, S., Borsboom, D., & Fried, E. I. (2017). Estimating psychological networks and their
+
+       accuracy: A tutorial paper. Behavior Research Methods, 1-18.
+
+Epskamp, S., Cramer, A. O., Waldorp, L. J., Schmittmann, V. D., & Borsboom, D. (2012).
+
+       qgraph: Network visualizations of relationships in psychometric data. Journal of
+
+       Statistical Software, 48(4), 1-18.
+
+Epskamp, S., & Fried, E. I. (2018). A tutorial on regularized partial correlation networks.
+
+       Psychological Methods.
+
+Epskamp, S., Rhemtulla, M., & Borsboom, D. (2017). Generalized network psychometrics:
+
+       Combining network and latent variable models. Psychometrika, 1-24. doi:
+
+       10.1007/s11336-017-9557-x
+
+Fiske, D.W. (1949). Consistency of the factorial structures of personality ratings from different
+
+       sources. Journal of Abnormal and Social Psychology, 44, 329–344.
+
+Forbes, M. K., Wright, A. G. C., Markon, K. E., & Krueger, R. F. (2017). Evidence that
+
+       psychopathology symptom networks have limited replicability. Journal of Abnormal
+REOPENING OPENNESS TO EXPERIENCE                                                                   40
+
+
+       Psychology, 126(7), 969-988.
+
+Fortunato, S. (2010). Community detection in graphs. Physics Reports, 486(3), 75-174.
+
+Foygel, R., & Drton, M. (2010). Extended Bayesian information criteria for Gaussian graphical
+
+       models. Advances in Neural Information Processing Systems, 23, 2020–2028.
+
+Fruchterman, T. M., & Reingold, E. M. (1991). Graph drawing by force‐directed placement.
+
+       Software: Practice and Experience, 21(11), 1129-1164.
+
+Goldberg, L. R. (1981). Language and individual differences: The search for universals in
+
+       personality lexicons. Review of Personality and Social Psychology, 2(1), 141-165.
+
+Golino, H. F., & Demetriou, A. (2017). Estimating the dimensionality of intelligence like data
+
+       using Exploratory Graph Analysis. Intelligence, 62, 54-70.
+
+Golino, H. F., & Epskamp, S. (2017). Exploratory graph analysis: A new approach for estimating
+
+       the number of dimensions in psychological research. PloS one, 12(6), e0174035.
+
+Johnson, J. A. (1994). Clarification of factor five with the help of the AB5C model. European
+
+       Journal of Personality, 8(4), 311–34.
+
+Kaufman, S. B., DeYoung, C. G., Gray, J. R., Jiménez, L., Brown, J., & Mackintosh, N. (2010).
+
+       Implicit learning as an ability. Cognition, 116(3), 321-340.
+
+Kaufman, S. B., Quilty, L. C., Grazioplene, R. G., Hirsh, J. B., Gray, J. R., Peterson, J. B., &
+
+       DeYoung, C. G. (2016). Openness to experience and intellect differentially predict
+
+       creative achievement in the arts and sciences. Journal of Personality, 84(2), 248-258.
+
+Lee, K., & Ashton, M. C. (2004). Psychometric properties of the HEXACO personality
+
+       inventory. Multivariate Behavioral Research, 39(2), 329-358.
+
+Lee, K., & Ashton, M. (in press). Psychometric properties of the HEXACO-100. Assessment.
+
+Linacre, J.M. (2017). Winsteps® (Version 3.93.0) [Computer Software]. Beaverton, Oregon:
+REOPENING OPENNESS TO EXPERIENCE                                                                  41
+
+
+       Winsteps.com. Retrieved January 1, 2017. Available from http://www.winsteps.com/
+
+Maniaci, M. R., & Rogge, R. D. (2014). Caring about carelessness: Participant inattention and its
+
+       effects on research. Journal of Research in Personality, 48, 61-83.
+
+Massara, G. P., Di Matteo, T., & Aste, T. (2016). Network filtering for big data: Triangulated
+
+       maximally filtered graph. Journal of Complex Networks, 5(2), 161-178.
+
+McCrae, R. R. (2007). Aesthetic chills as a universal marker of openness to experience.
+
+       Motivation and Emotion, 31(1), 5-11.
+
+McCrae, R. R. (2015). A more nuanced view of reliability: Specificity in the trait
+
+       hierarchy. Personality and Social Psychology Review, 19(2), 97-112.
+
+McCrae, R. R., Costa, Jr, P. T., & Martin, T. A. (2005). The NEO–PI–3: A more readable
+
+       revised NEO personality inventory. Journal of Personality Assessment, 84(3), 261-270.
+
+McKibben, W. B., & Silvia, P. J. (2016). Inattentive and socially desirable responding:
+
+       Addressing subtle threats to validity in quantitative counseling research. Counseling
+
+       Outcome Research and Evaluation, 7, 53-64.
+
+McKibben, W. B., & Silvia, P. J. (2017). Evaluating the distorting effects of inattentive
+
+       responding and social desirability on self-report scales in creativity and the arts. Journal
+
+       of Creative Behavior, 51, 57-69.
+
+Mõttus, R. (2016). Towards more rigorous personality trait–outcome research. European Journal
+
+       of Personality, 30(4), 292-303.
+
+Mõttus, R., & Allerhand, M. (in press). Why do traits come together? The underlying trait and
+
+       network approaches. In V. Zeigler-Hill & T. K. Shackelford (Eds.), SAGE handbook of
+
+       personality and individual differences: The science of personality and individual
+
+       differences (Vol. 1, pp. 1-22). London, UK: SAGE.
+REOPENING OPENNESS TO EXPERIENCE                                                                    42
+
+
+Mussel, P. (2013). Intellect: A theoretical framework for personality traits related to intellectual
+
+       achievements. Journal of Personality and Social Psychology, 104(5), 885-906.
+
+Norman, W. T. (1963). Toward an adequate taxonomy of personality attributes: Replicated factor
+
+       structure in peer nomination personality ratings. Journal of Abnormal and Social
+
+       Psychology, 66, 574–583.
+
+Pons, P., & Latapy, M. (2006). Computing communities in large networks using random
+
+       walks. Journal of Graph Algorithms and Applications, 10(2), 191-218.
+
+Pozzi, F., Di Matteo, T., & Aste, T. (2013). Spread of risk across financial markets: Better to
+
+       invest in the peripheries. Scientific Reports, 3(1665), 1-7.
+
+R Core Team (2017). R: A language and environment for statistical computing. R Foundation for
+
+       Statistical Computing, Vienna, Austria. Available from https://www.R-project.org/.
+
+Silvia, P. J., Cotter, K. N., & Chrisensen, A. P. (2017). The creative self in context: Experience
+
+       sampling and the ecology of everyday creativity. In M. Karwowski & J. C. Kaufman
+
+       (Eds.), The creative self: Effects of beliefs, self-efficacy, mindset, and identity (pp. 275 –
+
+       288). Cambridge, MA: Elsevier.
+
+Silvia, P. J., Fayn, K., Nusbaum, E. C., & Beaty, R. E. (2015). Openness to experience and awe
+
+       in response to nature and music: Personality and profound aesthetic experiences.
+
+       Psychology of Aesthetics, Creativity, and the Arts, 9, 376-384.
+
+Smeekens, B. A., & Kane, M. J. (2016). Working memory capacity, mind wandering, and
+
+       creative cognition: An individual-differences investigation into the benefits of controlled
+
+       versus spontaneous thought. Psychology of Aesthetics, Creativity, and the Arts, 10(4),
+
+       389-415.
+
+Song, W. M., Di Matteo, T., & Aste, T. (2011). Nested hierarchies in planar graphs. Discrete
+REOPENING OPENNESS TO EXPERIENCE                                                                   43
+
+
+       Applied Mathematics, 159(17), 2135-2146.
+
+Song, W. M., Di Matteo, T., & Aste, T. (2012). Hierarchical information clustering by means of
+
+       topologically embedded graphs. PLoS One, 7(3), e31929.
+
+van Borkulo, C. D., Boschloo, L., Kossakowski, J., Tio, P., Schoevers, R. A., Borsboom, D., &
+
+       Waldorp, L. J. (2018). Comparing network structures on three aspects: A permutation
+
+       test. Manuscript under review. Available from:
+
+       https://www.researchgate.net/profile/Claudia_Van_Borkulo/publication/314750838_Com
+
+       paring_network_structures_on_three_aspects_A_permutation_test/links/58c55ef1458515
+
+       38eb8af8a9/Comparing-network-structures-on-three-aspects-A-permutation-test.pdf
+
+van Sonderen, E., Sanderman, R., & Coyne, J. C. (2013). Ineffectiveness of reverse wording of
+
+       questionnaire items: Let’s learn from cows in the rain. PloS one, 8(7), e68967.
+
+Woo, S. E., Chernyshenko, O. S., Longley, A., Zhang, Z. X., Chiu, C. Y., & Stark, S. E. (2014).
+
+       Openness to experience: Its lower-level structure, measurement, and cross-cultural
+
+       equivalence. Journal of Personality Assessment, 96(1), 29-45.
+
+Xu, X., Plaks, J. E., & Peterson, J. B. (2016). From dispositions to goals to ideology: Toward a
+
+       synthesis of personality and social psychological approaches to political
+
+       orientation. Social and Personality Psychology Compass, 10(5), 267-280.
+               REOPENING NETWORK OF OPENNESS TO EXPERIENCE                                                                                       44
+
+
+           Table 1. Descriptions and Rasch reliabilities (Rr) of each facet from each Openness to Experience inventory.
+
+            Scale                          Facet (Rr)                                                     Description
+          NEO-PI-3                        Fantasy (.76)                                  Receptivity to the inner world of imagination
+(Martin, McCrae, & Costa, 2005)          Aesthetics (.81)                                       Appreciation of art and beauty
+                                          Feelings (.73)                                    Openness to inner feelings and emotions
+                                           Actions (.71)                               Openness to new experiences on a practical level
+                                           Ideas (.82)                                              Intellectual curiosity
+                                           Values (.74)                    Readiness to re-examine one’s own values and those of authority figures
+           BFAS                                                    Perceptual engagement (perceptual and sensory information), including an interest in art,
+                                          Openness (.80)
+     (DeYoung et al. 2007)                                                                    nature, and sensory experiences
+                                                                     Intellectual engagement (abstract and semantic information), including an interest in
+                                          Intellect (.83)
+                                                                                 intellectual hobbies and activities as well as intellectual ability
+            Woo                                                     Appreciation of various forms of art such as paintings, classical music, buildings, and
+                                         Aesthetics (.84)
+       (Woo et al., 2014)                                                                                  landscapes
+                                           Depth (.77)              Desire to gain insights into oneself and the world, to self-improve, and to self-actualize
+                                                                    Interest in learning about different cultures, preference to immerse self in new customs
+                                          Tolerance (.69)
+                                                                                                  and traditions when traveling
+                                   Intellectual Efficiency (.83)                    Efficiency in processing novel intellectual information
+                                          Ingenuity (.82)                             Preparedness to create new intellectual knowledge
+                                         Curiosity (.77)                                     Attraction to novel intellectual ideas
+          HEXACO                   Aesthetic Appreciation (.67)                             Enjoyment of beauty in art and in nature
+     (Lee & Ashton, 2004)              Inquisitiveness (.73)        Tendency to seek information about, and experience with, the natural and human world
+                                        Creativity (.73)                                Preference for innovation and experimentation
+                                     Unconventionality (.58)                                   Tendency to accept the unusual
+         REOPENING OPENNESS TO EXPERIENCE                                                                45
+
+
+         Table 2. Labels and descriptions of the network-identified facets.
+
+    Aspect                  Facet                                             Description
+    Intellect        Intellectual Interests     Engagement in philosophy and discussing abstract, theoretical ideas
+                        Self-Assessed             Perceived ability to think quickly, solve problems, and process
+                          Intelligence                                        information
+                                                 Enjoyment of learning new things, thinking about complexity, and
+                     Intellectual Curiosity
+                                                                         reflecting on thoughts
+Open-Mindedness      Non-Traditionalism                Receptiveness to new ideas, cultures, and perspectives
+                                               Willingness to explore new environments and try new ways of doing
+                       Variety-Seeking
+                                                                                  things
+                          Diversity                    Embraces a variety of attitudes, beliefs, and lifestyles
+  Experiencing      Aesthetic Appreciation               Engagement in the arts and perceptual experiences
+                    Openness to Emotions       Sensitivity to aesthetic emotions, complex feelings, and strong moods
+                         Imaginative                   Ability to have original thoughts and a desire to create
+                           Fantasy                            Tendency to daydream and mind wander
+REOPENING OPENNESS TO EXPERIENCE                                                                46
+
+
+Table 3. Rasch reliabilities (Rr) and correlations of the network-identified Openness to
+
+Experience facets.
+
+ Network-identified Facet           Rr    1.    2.    3.    4.    5.    6.    7.    8.     9.   10.
+ 1. Intellectual Interests          .89   —
+ 2. Self-Assessed Intelligence      .90   .56   —
+ 3. Intellectual Curiosity          .88   .65   .61   —
+ 4. Non-Traditionalism              .80   .65   .44   .46   —
+ 5. Variety-Seeking                 .75   .39   .25   .23   .53   —
+ 6. Diversity                       .75   .43   .27   .56   .50   .36   —
+ 7. Aesthetic Appreciation          .92   .63   .35   .54   .50   .32   .48   —
+ 8. Openness to Emotions            .79   .30   .15   .45   .34   .12   .47   .54   —
+ 9. Imaginative                     .86   .54   .44   .61   .39   .30   .40   .68   .49    —
+ 10. Fantasy                      .75 .41 .27 .31 .54 .35 .27 .40 .36 .50 —
+ Global Openness to Experience .97 .83 .66 .78 .73 .48 .63 .84 .57 .78 .57
+Note. All p’s < .001. Bold numbers are within-aspect correlations (1–3, Intellect; 4–6, Open-
+
+Mindedness; 7–10, Experiencing).
+     REOPENING OPENNESS TO EXPERIENCE                                                                                             47
+
+
+Figure 1. The network of Openness to Experience depicted with all items. The shape of the node indicates the inventory (square,
+BFAS; diamond, HEXACO; circle, NEO; triangle, Woo et al.), the color portrays the network-identified facet, the label represents the
+inventory-defined facet and the item number of the inventory-defined facet (see SI 2 for identification).
+    REOPENING OPENNESS TO EXPERIENCE                                                                                               48
+
+
+Figure 2. The networks depict the item coverage based on the network-identified facets of each openness to experience inventory.
+
+Colored nodes represent items in the respective inventory and network-identified facet while white nodes indicate items of other
+
+inventories. For full view of each inventory see supplementary materials.
+
