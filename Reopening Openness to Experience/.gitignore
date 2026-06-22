@@ -1,0 +1,25 @@
+# ── 系统 / 编辑器临时与锁文件 ──
+~$*
+.DS_Store
+Thumbs.db
+*.tmp
+
+# ── Python ──
+__pycache__/
+*.pyc
+
+# ── R ──
+.Rhistory
+.RData
+.Rproj.user/
+
+# ── 备份文件 ──
+*_备份.xlsx
+*.bak
+
+# ── 原文献的受版权材料（期刊 / 作者所有，公开仓库请勿再分发；本地保留、不上传）──
+# 如你确认有权分发、想一并提交，删除下面几行即可：
+post-review manuscript/
+working paper/
+madialab questionnaire files/
+planned analyses/
