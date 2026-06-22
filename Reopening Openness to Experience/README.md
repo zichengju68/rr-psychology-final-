@@ -28,7 +28,7 @@
 |---|---|
 | 📄 **可复现性报告** | [`可复现性报告/对Christensen等(2019)研究结果的计算可复现性检验报告.docx`](可复现性报告/) |
 | 📊 **汇报 PPT** | [`ppt/复现汇报.pptx`](ppt/) |
-| 💻 **复现代码** | [`r code/注释.R`](r%20code/)（主复现日志 + 可复现代码）、[`r code/复现脚本_8社区分支.R`](r%20code/)（8 社区扩展分支）、`r code/Reopening Openness to Experience.R`（原作者脚本） |
+| 💻 **复现代码** | [`r code/`](r%20code/) 内含四个文件：`Reopening Openness to Experience.R`（**原作者**原始脚本）、`Reopening Openness to Experience.R副本.R`（**我的**复现代码，在原作者脚本基础上做了修改）、`复现脚本_8社区分支.R`（**Claude Code 编写**的 8 社区稳健性分支）、`注释.R`（**我的复现笔记**：过程中遇到的问题、解决思路与总结） |
 | 🖼️ **图片** | [`图片/`](图片/)（自产网络图 PDF：整体网络图、量表各自网络图、四套分图；及复现过程截图）、[`复现输出/`](复现输出/)（8 社区分支 PNG + 结果 txt） |
 | 📑 **对照表** | [`表格/可复现性检验_表格汇总.xlsx`](表格/)（表1 文献信息、表2 描述统计、表5 推断统计、表7 结果评级、表8 推论一致、表10 原因分析） |
 | 🎙️ **逐字稿** | [`逐字稿/`](逐字稿/) |
@@ -65,8 +65,8 @@ biotools               # Box's M 检验
 
 1. 安装上述程序包（NetworkToolbox 从 GitHub 装）。
 2. `setwd()` 到本仓库根目录。
-3. 运行 `r code/注释.R`：依次完成 TMFG 构网 → walktrap 社区检测（`cut_at(no=10)` 强切 10）→ 按 SI 2 逐题核对命名 → 出 Figure 1/2 → MANOVA + Box's M（含用 138 题响应指纹重建分组变量 Group）。
-4. 关键发现与逐步说明均以中文注释写在 `r code/注释.R` 中。
+3. 运行我的复现代码 `r code/Reopening Openness to Experience.R副本.R`：依次完成 TMFG 构网 → walktrap 社区检测（`cut_at(no=10)` 强切 10）→ 按 SI 2 逐题核对命名 → 出 Figure 1/2 → MANOVA + Box's M（含用 138 题响应指纹重建分组变量 Group）。
+4. 复现过程中遇到的问题、解决思路与总结，记在 `r code/注释.R`（笔记）中；8 社区稳健性分支见 `r code/复现脚本_8社区分支.R`（Claude Code 编写）。
 
 ## 数据说明
 

@@ -30,7 +30,7 @@
 |---|---|---|---|
 | 📄 | **可复现性报告** | [`可复现性报告/`](<Reopening Openness to Experience/可复现性报告/>) | 主交付物 `对Christensen等(2019)研究结果的计算可复现性检验报告.docx`，按指南附录撰写，含 8 张结果表 |
 | 📊 | **汇报 PPT** | [`ppt/`](<Reopening Openness to Experience/ppt/>) | `复现汇报.pptx`（汇报用幻灯片）；`build_ppt.py` 为生成脚本 |
-| 💻 | **复现代码** | [`r code/`](<Reopening Openness to Experience/r code/>) | `注释.R` = 主复现日志（含中文逐步注释）；`复现脚本_8社区分支.R` = 8 社区稳健性分支；`Reopening Openness to Experience.R` = 原作者脚本 |
+| 💻 | **复现代码** | [`r code/`](<Reopening Openness to Experience/r code/>) | `Reopening Openness to Experience.R` = 原作者原始脚本；`Reopening Openness to Experience.R副本.R` = 本人复现代码（在原作者基础上做了修改）；`复现脚本_8社区分支.R` = Claude Code 编写的 8 社区稳健性分支；`注释.R` = 本人复现笔记（遇到的问题、思路与总结） |
 | 🖼️ | **图片** | [`图片/`](<Reopening Openness to Experience/图片/>) | `我的输出图片/` = 本人复现产出（网络图 PDF + 过程截图）；`Claude输出的图片/` = 8 社区分支输出 PNG |
 
 ### 其余材料
